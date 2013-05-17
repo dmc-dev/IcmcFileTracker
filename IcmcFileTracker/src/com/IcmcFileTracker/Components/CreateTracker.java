@@ -65,12 +65,7 @@ public class CreateTracker extends CustomComponent implements View{
 		
 		this.boss=mainUI;	
 		
-		
-		
-			
-		
-		BeanItemContainer<Tracker> beans = new BeanItemContainer<Tracker>(Tracker.class);
-		
+		BeanItemContainer<Tracer> beans = new BeanItemContainer<Tracer>(Tracer.class);
 		
 		table.setContainerDataSource(beans);
 		table.setColumnCollapsingAllowed(true);
@@ -80,7 +75,6 @@ public class CreateTracker extends CustomComponent implements View{
 		inOutGroup.addItem(in);
 		inOutGroup.addItem(new InOutObj(InOutObj.OUT));
 		inOutGroup.select(in);
-		
 		
 		
 		fileID.addShortcutListener(new ShortcutListener("caption", ShortcutAction.KeyCode.ENTER, null){
@@ -97,28 +91,7 @@ public class CreateTracker extends CustomComponent implements View{
 				for(String id : fileIDs){
 					id=id.trim();
 					if(!id.equals("")){
-						
 						process(id);
-						
-						FileTracker ft = FileTracker.find(id);
-						Tracker track = makeTrackerFromUI();
-						
-						if(ft!=null && ft.getTracker().isCheckIN() == track.isCheckIN()){
-							Notification.show("File "+id+" all ready checked "+InOutObj.getString(track.isCheckIN()), Notification.Type.WARNING_MESSAGE);
-						}
-						else{
-							if(ft==null){
-								ft = new FileTracker();	
-								ft.setFileID(id);
-							}
-									
-							track.setFileTracker(ft);
-							track.setDate(Calendar.getInstance().getTime());
-							ft.setTracker(track);
-							ft.setDate_updated(track.getDate());
-							ft.persist();
-							table.addItem(track);
-						}
 					}
 				}
 				
@@ -143,6 +116,7 @@ public class CreateTracker extends CustomComponent implements View{
 					}
 					head.setTrace(trace);
 					head.persist();
+					table.addItem(trace);
 				}
 			}
 			
@@ -166,15 +140,7 @@ public class CreateTracker extends CustomComponent implements View{
 				
 			}
 			
-			public Tracker makeTrackerFromUI(){
-				Tracker track = new Tracker();
-				track.setLocalUser(boss.user);
-				track.setDepartment((Department) department.getValue());
-				track.setCheckIN( ((InOutObj)inOutGroup.getValue()).getValue() );
-				track.setComment(comment.getValue());
-				return track;
-				
-			}
+			
 		});
 
 	}
