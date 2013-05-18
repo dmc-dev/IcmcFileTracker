@@ -31,9 +31,7 @@ public class NavBar extends CustomComponent{
 		setCompositionRoot(layout);
 		
 		this.boss=mainUI;
-		
-		
-		
+			
 		MenuBar.Command command = new MenuBar.Command() {	  
 			private static final long serialVersionUID = 1L;
 
@@ -45,36 +43,20 @@ public class NavBar extends CustomComponent{
 		
 		MenuItem home = navBar.addItem(HomeView.VIEW_NAME, null, command);
 		boss.navigator.addView(HomeView.VIEW_NAME, new HomeView());
-		
-		
-		
-		
-		//MenuItem home = navBar.addItem(TrackerHistory.VIEW_NAME, null, command);
-		//boss.navigator.addView(TrackerHistory.VIEW_NAME, new TrackerHistory());
-		
-		//MenuItem warn = navBar.addItem(TrackerWarning.VIEW_NAME, null, command);
-		//boss.navigator.addView(TrackerWarning.VIEW_NAME, new TrackerWarning());
-		
-		
+	
 		MenuItem track = navBar.addItem(CreateTracker.VIEW_NAME, null, command);
 		boss.navigator.addView(CreateTracker.VIEW_NAME, new CreateTracker(boss));
-		
-		/*
-		track.addItem("All", null, command);
-		track.addItem("CheckIN", null, command);
-		track.addItem("CheckOUT", null, command);
-		*/
-		
-		
-		
+				
 		MenuItem userView = navBar.addItem(boss.user.getUserName(), null, command);
-		boss.navigator.addView(boss.user.getUserName(), new CreateTracker(boss));
+		//boss.navigator.addView(boss.user.getUserName(), new CreateTracker(boss));
 		
 		
 		MenuItem view = navBar.addItem("View", null, null);
-		view.addItem("MyHistory", null, command);
+		
+		
+		
+		
 		view.addItem("FileHistory", null, command);
-		view.addItem("Warrnigs", null, command);
 		view.addItem("CheckIns", null, command);
 		view.addItem("CheckOuts", null, command);
 		

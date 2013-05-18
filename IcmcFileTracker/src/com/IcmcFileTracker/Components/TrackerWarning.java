@@ -14,6 +14,7 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.NativeSelect;
+import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 
 public class TrackerWarning extends CustomComponent implements View, Listener{
@@ -90,6 +91,8 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 	public void componentEvent(Event event) {
 		
 		if(event.getComponent().equals(state)){
+			Notification.show("HI");
+
 			if(state.getValue().equals(in)){
 				toFromLabel.setValue(inTo);
 			}else{
