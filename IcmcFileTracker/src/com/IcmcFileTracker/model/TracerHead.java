@@ -1,5 +1,6 @@
 package com.IcmcFileTracker.model;
 
+import java.util.Calendar;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -20,18 +21,6 @@ import com.IcmcFileTracker.helpers.EMF;
 @Inheritance( strategy=InheritanceType.TABLE_PER_CLASS)
 public class TracerHead extends Tracer{
 	private static final long serialVersionUID = 1L;
-
-	
-	protected String fileid;
-	
-	
-	public String getFileid() {
-		return fileid;
-	}
-
-	public void setFileid(String fileid) {
-		this.fileid = fileid;
-	}
 
 	@OneToOne(cascade = CascadeType.ALL)
 	protected Tracer trace;
@@ -70,11 +59,23 @@ public class TracerHead extends Tracer{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<TracerHead> getAllLatestTrackers(){
+	public static List<TracerHead> getAllLatestTracers(){
 	    EntityManager em = EMF.getEntityManager();
 	    
 	    Query q = em.createQuery("SELECT t FROM TracerHead t ORDER BY t.date DESC", TracerHead.class);
 	   
 	    return q.getResultList();
-	}	
+	}
+	
+	public static List<TracerHead> getOldTracers(int days){
+	    EntityManager em = EMF.getEntityManager();
+	     
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.date <= :date ORDER BY t.date DESC", TracerHead.class);
+	   
+	    Calendar c = Calendar.getInstance();
+	    c.add(Calendar.DATE, -days);
+	    q.setParameter("date", c.getTime());
+	    
+		return (List<TracerHead>) q.getResultList();
+	}
 }

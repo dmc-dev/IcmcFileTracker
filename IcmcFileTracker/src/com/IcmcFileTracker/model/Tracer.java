@@ -26,12 +26,9 @@ import java.util.List;
 public class Tracer implements Serializable{
 	private static final long serialVersionUID = 1L;
 
-	//@Id
-    //protected String id;
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)    
     private Key id;
-	
 	
 	@Unowned
 	protected LocalUser localUser;
@@ -48,6 +45,17 @@ public class Tracer implements Serializable{
 	@Basic
 	protected boolean checkIN;
 
+	@Basic
+	protected String fileid;
+	
+	public String getFileid() {
+		return fileid;
+	}
+
+	public void setFileid(String fileid) {
+		this.fileid = fileid;
+	}
+	
 	public Key getId() {
 		return id;
 	}
