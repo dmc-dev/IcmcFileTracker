@@ -6,4 +6,11 @@
 		<property name="date" direction="desc"/>
 	</datastore-index>
     
+    <datastore-index kind="TracerHead" ancestor="false" source="manual">
+        <property name="checkIN" direction="asc"/>
+        <property name="department_id" direction="asc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>
+    
+    
 </datastore-indexes>
