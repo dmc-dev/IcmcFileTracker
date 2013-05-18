@@ -43,14 +43,14 @@ public class NavBar extends CustomComponent{
 		};
 		
 		
-		//MenuItem home = navBar.addItem(HomeView.VIEW_NAME, null, command);
-		//boss.navigator.addView(HomeView.VIEW_NAME, new HomeView());
+		MenuItem home = navBar.addItem(HomeView.VIEW_NAME, null, command);
+		boss.navigator.addView(HomeView.VIEW_NAME, new HomeView());
 		
 		
 		
 		
-		MenuItem home = navBar.addItem(TrackerHistory.VIEW_NAME, null, command);
-		boss.navigator.addView(TrackerHistory.VIEW_NAME, new TrackerHistory());
+		//MenuItem home = navBar.addItem(TrackerHistory.VIEW_NAME, null, command);
+		//boss.navigator.addView(TrackerHistory.VIEW_NAME, new TrackerHistory());
 		
 		//MenuItem warn = navBar.addItem(TrackerWarning.VIEW_NAME, null, command);
 		//boss.navigator.addView(TrackerWarning.VIEW_NAME, new TrackerWarning());
