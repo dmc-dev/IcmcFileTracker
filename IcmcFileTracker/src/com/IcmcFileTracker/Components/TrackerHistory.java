@@ -1,5 +1,6 @@
 package com.IcmcFileTracker.Components;
 
+import com.IcmcFileTracker.model.Department;
 import com.IcmcFileTracker.model.FileTracker;
 import com.IcmcFileTracker.model.Tracer;
 import com.IcmcFileTracker.model.TracerHead;
@@ -73,7 +74,7 @@ public class TrackerHistory extends CustomComponent implements View{
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
-		
+				
 		beans.removeAllItems();
 		for(Tracer t : TracerHead.getAllLatestTracers()){
 			beans.addItem(t);

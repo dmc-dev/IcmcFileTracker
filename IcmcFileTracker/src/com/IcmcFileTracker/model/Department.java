@@ -54,7 +54,7 @@ public class Department implements Serializable{
 		
 	    EntityManager em = EMF.getEntityManager();
 	   
-	    Query q = em.createQuery("SELECT d FROM Department d", Department.class);
+	    Query q = em.createQuery("SELECT d FROM Department d WHERE d.active = true", Department.class);
 	    
 		return (List<Department>) q.getResultList();
 	}
