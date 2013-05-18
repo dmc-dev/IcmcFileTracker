@@ -190,7 +190,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// toFromLabel
 		toFromLabel = new Label();
-		//toFromLabel.set›mmediate(false);
+		toFromLabel.setImmediate(true);
 		toFromLabel.setWidth("-1px");
 		toFromLabel.setHeight("-1px");
 		toFromLabel.setValue("from Department");
