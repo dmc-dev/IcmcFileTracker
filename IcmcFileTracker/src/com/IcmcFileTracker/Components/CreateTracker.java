@@ -100,9 +100,11 @@ public class CreateTracker extends CustomComponent implements View{
 			
 			
 			private void process(String fileid){
+				enableUI(false);
 				
 				TracerHead head = TracerHead.find(fileid);
 				Tracer trace = makeTracerFromUI();
+				trace.setFileid(fileid);
 				
 				if(head!=null && head.isCheckIN() == trace.isCheckIN()){
 					Notification.show("File "+fileid+" all ready checked "+InOutObj.getString(head.isCheckIN()), Notification.Type.WARNING_MESSAGE);
@@ -116,8 +118,9 @@ public class CreateTracker extends CustomComponent implements View{
 					head.persist();
 					table.addItem(trace);
 				}
+				
+				enableUI(true);
 			}
-			
 			
 			
 			public void enableUI(boolean enabled){
@@ -135,7 +138,6 @@ public class CreateTracker extends CustomComponent implements View{
 				trace.setComment(comment.getValue());
 				trace.setDate(Calendar.getInstance().getTime());
 				return trace;
-				
 			}
 			
 		});
