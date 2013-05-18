@@ -76,9 +76,9 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		days.addItem(new Integer(3));
 		days.select(selected);
 		
-		days.addListener(this);
-		state.addListener(this);
-		department.addListener(this);
+		//days.addListener(this);
+		//state.addListener(this);
+		//department.addListener(this);
 	}
 
 	@Override
