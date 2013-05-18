@@ -67,14 +67,15 @@ public class TracerHead extends Tracer{
 	    return q.getResultList();
 	}
 	
-	public static List<TracerHead> getOldTracers(int days){
+	public static List<TracerHead> getOldTracers(boolean state, int days){
 	    EntityManager em = EMF.getEntityManager();
 	     
-	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.date <= :date ORDER BY t.date DESC", TracerHead.class);
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.checkIN = :state AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
 	   
 	    Calendar c = Calendar.getInstance();
 	    c.add(Calendar.DATE, -days);
 	    q.setParameter("date", c.getTime());
+	    q.setParameter("state", state);
 	    
 		return (List<TracerHead>) q.getResultList();
 	}
