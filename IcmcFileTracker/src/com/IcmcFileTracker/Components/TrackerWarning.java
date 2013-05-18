@@ -53,9 +53,6 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 	
 	public static final String VIEW_NAME ="TrackerWarnings";
 	
-	private static final String inTo = "to department  ";
-	private static final String outFrom = "from department";
-	
 	private static final InOutObj in = new InOutObj(InOutObj.IN);
 	private static final InOutObj out = new InOutObj(InOutObj.OUT);
 	
@@ -68,8 +65,6 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		state.addItem(in);
 		state.addItem(out);
 		state.select(out);
-		
-		toFromLabel.setValue(outFrom);
 		
 		Object selected = new Integer(1);
 		days.addItem(selected) ;
@@ -89,15 +84,6 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 	
 	@Override
 	public void componentEvent(Event event) {
-		
-		if(event.getComponent().equals(state)){
-		
-			if(state.getValue().equals(in)){
-				toFromLabel.setValue(inTo);
-			}else{
-				toFromLabel.setValue(outFrom);
-			}
-		}
 		
 		getWarnings();
 	}
@@ -199,7 +185,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		toFromLabel.setImmediate(true);
 		toFromLabel.setWidth("-1px");
 		toFromLabel.setHeight("-1px");
-		toFromLabel.setValue("from Department");
+		toFromLabel.setValue("to Department");
 		horizontalLayout_1.addComponent(toFromLabel);
 		
 		// department
