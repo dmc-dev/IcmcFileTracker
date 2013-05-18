@@ -91,8 +91,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 	public void componentEvent(Event event) {
 		
 		if(event.getComponent().equals(state)){
-			Notification.show("HI");
-
+		
 			if(state.getValue().equals(in)){
 				toFromLabel.setValue(inTo);
 			}else{
@@ -116,7 +115,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		if(department.getValue().equals(ALL)){
 			l = TracerHead.getOldTracers(bool, dayInt);
 		}else{
-			l = TracerHead.getOldTracers(bool, dayInt);
+			l = TracerHead.getOldTracers(bool, (Department)(department.getValue()), dayInt);
 		}
 		
 		warning_links.addComponent(new Label(l.size()+" Trackers older than "+dayInt+" days"));

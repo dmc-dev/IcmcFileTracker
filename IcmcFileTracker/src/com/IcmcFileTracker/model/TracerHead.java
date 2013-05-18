@@ -80,7 +80,7 @@ public class TracerHead extends Tracer{
 		return (List<TracerHead>) q.getResultList();
 	}
 	
-	public static List<TracerHead> getOldTracers(boolean state, String department, int days){
+	public static List<TracerHead> getOldTracers(boolean state, Department department, int days){
 	    EntityManager em = EMF.getEntityManager();
 	     
 	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.checkIN = :state AND t.department = :department AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
