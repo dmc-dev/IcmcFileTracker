@@ -83,7 +83,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 
 	@Override
 	public void enter(ViewChangeEvent event) {
-		update();
+		initDepartment();
 	}
 	
 	@Override
@@ -97,16 +97,8 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 			}
 		}
 		
-		update();
-	}
-	
-	private void update(){
-		
-		initDepartment();
-		
 		getWarnings();
 	}
-
 	
 	@SuppressWarnings("rawtypes")
 	private void getWarnings() {
@@ -209,7 +201,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		department.setImmediate(true);
 		department.setWidth("-1px");
 		department.setHeight("-1px");
-		department.setInvalidAllowed(false);
+		//department.setInvalidAllowed(false);
 		horizontalLayout_1.addComponent(department);
 		
 		// label_3
