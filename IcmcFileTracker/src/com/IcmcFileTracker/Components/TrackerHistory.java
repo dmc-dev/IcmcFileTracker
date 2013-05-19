@@ -73,7 +73,7 @@ public class TrackerHistory extends CustomComponent implements View{
 		// TODO Auto-generated method stub
 				
 		beans.removeAllItems();
-		for(Tracer t : TracerHead.getAllLatestTracers()){
+		for(Tracer t : TracerHead.getLatest()){
 			beans.addItem(t);
 		}
 	}

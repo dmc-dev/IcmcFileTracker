@@ -14,6 +14,7 @@ import com.google.appengine.api.datastore.Key;
 import com.google.appengine.datanucleus.annotations.Unowned;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -99,23 +100,60 @@ public class Tracer implements Serializable{
 		return checkIN;
 	}
 
-
 	@Override
 	public String toString() {
 		return id+" "+checkIN+" "+date+" "+localUser+" "+comment;
 	}
-
+	
 	
 	@SuppressWarnings("unchecked")
 	public static List<Tracer> getAll(){
-		
 	    EntityManager em = EMF.getEntityManager();
-	   
 	    Query q = em.createQuery("SELECT t FROM Tracer t", Tracer.class);
-	    
-		return (List<Tracer>) q.getResultList();
+		return q.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getLatest(){
+	    EntityManager em = EMF.getEntityManager();
+	    Query q = em.createQuery("SELECT t FROM Tracer t ORDER BY t.date DESC", Tracer.class);
+	    return q.getResultList();
+	}
 	
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getByUser(LocalUser user){
+	    EntityManager em = EMF.getEntityManager();
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.localUser = :user ORDER BY t.date DESC", Tracer.class);  
+	    q.setParameter("user", user);    
+		return q.getResultList();
+	}
+
+	
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getOld(boolean state, int days){
+	    EntityManager em = EMF.getEntityManager();
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.checkIN = :state AND t.date <= :date ORDER BY t.date DESC", Tracer.class);
+	   
+	    Calendar c = Calendar.getInstance();
+	    c.add(Calendar.DATE, -days);
+	    q.setParameter("date", c.getTime());
+	    q.setParameter("state", state);
+	    
+		return q.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getOld(boolean state, int days, Department department){
+	    EntityManager em = EMF.getEntityManager();
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.checkIN = :state AND t.department = :department AND t.date <= :date ORDER BY t.date DESC", Tracer.class);
+	   
+	    Calendar c = Calendar.getInstance();
+	    c.add(Calendar.DATE, -days);
+	    q.setParameter("date", c.getTime());
+	    q.setParameter("state", state);
+	    q.setParameter("department", department);
+	    
+		return q.getResultList();
+	}
 	
 }

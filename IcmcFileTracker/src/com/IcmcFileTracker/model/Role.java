@@ -1,9 +1,11 @@
 package com.IcmcFileTracker.model;
 
 import java.io.Serializable;
+import java.util.List;
 
 import javax.persistence.*;
 
+import com.IcmcFileTracker.helpers.EMF;
 import com.google.appengine.api.datastore.Key;
 
 @Entity
@@ -55,5 +57,12 @@ public class Role implements Serializable{
 
 	public void setId(Key id) {
 		this.id = id;
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static List<Role> getAll(){
+	    EntityManager em = EMF.getEntityManager();
+	    Query q = em.createQuery("SELECT u FROM Role u", Role.class);
+		return (List<Role>) q.getResultList();
 	}
 }

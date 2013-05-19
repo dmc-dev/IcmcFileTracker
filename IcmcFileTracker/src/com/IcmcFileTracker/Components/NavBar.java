@@ -44,7 +44,7 @@ public class NavBar extends CustomComponent{
 		boss.navigator.addView(CreateTracker.VIEW_NAME, new CreateTracker(boss));
 				
 		MenuItem userView = navBar.addItem(boss.user.getUserName(), null, command);
-		boss.navigator.addView(boss.user.getUserName(), new MyView());
+		boss.navigator.addView(boss.user.getUserName(), new MyView(boss.user));
 		
 		
 		MenuItem view = navBar.addItem("View", null, null);

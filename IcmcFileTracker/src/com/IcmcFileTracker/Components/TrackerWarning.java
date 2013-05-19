@@ -66,6 +66,10 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		state.addItem(out);
 		state.select(out);
 		
+		days.setNullSelectionAllowed(false);
+		department.setNullSelectionAllowed(false);
+		state.setNullSelectionAllowed(false);
+		
 		Object selected = new Integer(1);
 		days.addItem(selected) ;
 		days.addItem(new Integer(2));
@@ -99,9 +103,9 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		List l;
 		
 		if(department.getValue().equals(ALL)){
-			l = TracerHead.getOldTracers(bool, dayInt);
+			l = TracerHead.getOld(bool, dayInt);
 		}else{
-			l = TracerHead.getOldTracers(bool, (Department)(department.getValue()), dayInt);
+			l = TracerHead.getOld(bool, dayInt, (Department)(department.getValue()));
 		}
 		
 		warning_links.addComponent(new Label(l.size()+" Trackers older than "+dayInt+" days"));
@@ -171,7 +175,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// state
 		state = new NativeSelect();
-		//state.set›mmediate(false);
+		state.setImmediate(true);
 		state.setWidth("-1px");
 		state.setHeight("-1px");
 		//state.set›nvalidAllowed(false);
@@ -187,7 +191,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// department
 		department = new NativeSelect();
-		//department.set›mmediate(false);
+		department.setImmediate(true);
 		department.setWidth("-1px");
 		department.setHeight("-1px");
 		//department.set›nvalidAllowed(false);
@@ -203,7 +207,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// days
 		days = new NativeSelect();
-		//days.set›mmediate(false);
+		days.setImmediate(true);
 		days.setWidth("-1px");
 		days.setHeight("-1px");
 		//days.set›nvalidAllowed(false);

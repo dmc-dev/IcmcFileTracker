@@ -51,6 +51,13 @@ public class Department implements Serializable{
 	}
 
 	@SuppressWarnings("unchecked")
+	public static List<Department> getAll(){
+	    EntityManager em = EMF.getEntityManager();
+	    Query q = em.createQuery("SELECT d FROM Department d", Department.class);
+		return (List<Department>) q.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
 	public static List<Department> getAllActive(){
 		
 	    EntityManager em = EMF.getEntityManager();
@@ -58,5 +65,4 @@ public class Department implements Serializable{
 	    q.setParameter("active", true);
 		return (List<Department>) q.getResultList();
 	}
-	
 }

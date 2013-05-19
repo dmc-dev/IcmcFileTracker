@@ -58,18 +58,31 @@ public class TracerHead extends Tracer{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<TracerHead> getAllLatestTracers(){
+	public static List<Tracer> getAll(){
 	    EntityManager em = EMF.getEntityManager();
-	    
+	    Query q = em.createQuery("SELECT t FROM TracerHead t", TracerHead.class);
+		return q.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getLatest(){
+	    EntityManager em = EMF.getEntityManager();
 	    Query q = em.createQuery("SELECT t FROM TracerHead t ORDER BY t.date DESC", TracerHead.class);
-	   
 	    return q.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<TracerHead> getOldTracers(boolean state, int days){
+	public static List<Tracer> getByUser(LocalUser user){
 	    EntityManager em = EMF.getEntityManager();
-	     
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.localUser = :user ORDER BY t.date DESC", TracerHead.class);  
+	    q.setParameter("user", user);    
+		return q.getResultList();
+	}
+
+	
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getOld(boolean state, int days){
+	    EntityManager em = EMF.getEntityManager();
 	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.checkIN = :state AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
 	   
 	    Calendar c = Calendar.getInstance();
@@ -77,13 +90,12 @@ public class TracerHead extends Tracer{
 	    q.setParameter("date", c.getTime());
 	    q.setParameter("state", state);
 	    
-		return (List<TracerHead>) q.getResultList();
+		return q.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<TracerHead> getOldTracers(boolean state, Department department, int days){
+	public static List<Tracer> getOld(boolean state, int days, Department department){
 	    EntityManager em = EMF.getEntityManager();
-	     
 	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.checkIN = :state AND t.department = :department AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
 	   
 	    Calendar c = Calendar.getInstance();
@@ -92,15 +104,7 @@ public class TracerHead extends Tracer{
 	    q.setParameter("state", state);
 	    q.setParameter("department", department);
 	    
-		return (List<TracerHead>) q.getResultList();
+		return q.getResultList();
 	}
 	
-	@SuppressWarnings("unchecked")
-	public static List<TracerHead> getTracersBy(LocalUser user){
-	    EntityManager em = EMF.getEntityManager();
-	     
-	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.localUser = :user ORDER BY t.date DESC", TracerHead.class);  
-	    q.setParameter("user", user);    
-		return (List<TracerHead>) q.getResultList();
-	}
 }
