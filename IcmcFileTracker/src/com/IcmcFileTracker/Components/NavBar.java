@@ -62,7 +62,8 @@ public class NavBar extends CustomComponent{
 		MenuItem adminView = admin.addItem("View", null, null);
 		adminView.addItem("Users", null, command);
 		
-		navBar.setSizeFull();
+		//navBar.setSizeFull();
+		navBar.setSizeUndefined();
 		layout.addComponent(navBar);
 	}
 }
