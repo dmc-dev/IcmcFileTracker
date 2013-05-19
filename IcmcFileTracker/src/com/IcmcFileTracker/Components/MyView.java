@@ -96,7 +96,7 @@ public class MyView extends CustomComponent implements View{
 		verticalSplitPanel_2 = new VerticalSplitPanel();
 	//	verticalSplitPanel_2.set›mmediate(false);
 		verticalSplitPanel_2.setWidth("-1px");
-		verticalSplitPanel_2.setHeight("200px");
+		verticalSplitPanel_2.setHeight("100.0%");
 		
 		// table_1
 		table_1 = new Table();
