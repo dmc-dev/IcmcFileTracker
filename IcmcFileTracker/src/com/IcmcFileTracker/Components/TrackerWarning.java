@@ -14,6 +14,7 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.NativeSelect;
+import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
 public class TrackerWarning extends CustomComponent implements View, Listener{
@@ -128,15 +129,15 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 	private VerticalLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new VerticalLayout();
-		//mainLayout.setImmediate(false);
-		mainLayout.setWidth("100%");
-		mainLayout.setHeight("100%");
+		//mainLayout.set›mmediate(false);
+		mainLayout.setWidth("-1px");
+		mainLayout.setHeight("-1px");
 		mainLayout.setMargin(true);
 		mainLayout.setSpacing(true);
 		
 		// top-level component properties
-		setWidth("100.0%");
-		setHeight("100.0%");
+		setWidth("-1px");
+		setHeight("-1px");
 		
 		// horizontalLayout_1
 		horizontalLayout_1 = buildHorizontalLayout_1();
@@ -144,11 +145,6 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// warning_links
 		warning_links = new VerticalLayout();
-		//warning_links.set›mmediate(false);
-		warning_links.setWidth("-1px");
-		warning_links.setHeight("-1px");
-		warning_links.setMargin(false);
-		warning_links.setSpacing(true);
 		mainLayout.addComponent(warning_links);
 		
 		return mainLayout;
@@ -174,7 +170,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// state
 		state = new NativeSelect();
-		state.setImmediate(true);
+		//state.set›mmediate(false);
 		state.setWidth("-1px");
 		state.setHeight("-1px");
 		//state.set›nvalidAllowed(false);
@@ -182,7 +178,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// toFromLabel
 		toFromLabel = new Label();
-		toFromLabel.setImmediate(true);
+		//toFromLabel.set›mmediate(false);
 		toFromLabel.setWidth("-1px");
 		toFromLabel.setHeight("-1px");
 		toFromLabel.setValue("to Department");
@@ -190,10 +186,10 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// department
 		department = new NativeSelect();
-		department.setImmediate(true);
+		//department.set›mmediate(false);
 		department.setWidth("-1px");
 		department.setHeight("-1px");
-		//department.setInvalidAllowed(false);
+		//department.set›nvalidAllowed(false);
 		horizontalLayout_1.addComponent(department);
 		
 		// label_3
@@ -206,10 +202,10 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// days
 		days = new NativeSelect();
-		days.setImmediate(true);
+		//days.set›mmediate(false);
 		days.setWidth("-1px");
 		days.setHeight("-1px");
-		//days.setInvalidAllowed(false);
+		//days.set›nvalidAllowed(false);
 		horizontalLayout_1.addComponent(days);
 		horizontalLayout_1.setComponentAlignment(days, new Alignment(9));
 		
@@ -223,4 +219,6 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		return horizontalLayout_1;
 	}
+
+	
 }
