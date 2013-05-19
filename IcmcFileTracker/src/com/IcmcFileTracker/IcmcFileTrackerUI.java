@@ -18,8 +18,8 @@ import com.vaadin.ui.Panel;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
-//@Theme("chameleon")
-@Theme("runo")
+@Theme("chameleon")
+//@Theme("runo")
 public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginListener{
 
 	private static final long serialVersionUID = 1L;
