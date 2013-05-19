@@ -149,7 +149,7 @@ public class CreateTracker extends CustomComponent implements View{
 		department.removeAllItems();
 		
 		Department last=null;
-		for(Department d : Department.getAll() ){
+		for(Department d : Department.getAllActive() ){
 			department.addItem(d);
 			last=d;
 		}

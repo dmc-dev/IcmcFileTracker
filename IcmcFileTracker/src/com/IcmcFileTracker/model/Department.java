@@ -50,7 +50,8 @@ public class Department implements Serializable{
 		this.id = id;
 	}
 
-	public static List<Department> getAll(){
+	@SuppressWarnings("unchecked")
+	public static List<Department> getAllActive(){
 		
 	    EntityManager em = EMF.getEntityManager();
 	    Query q = em.createQuery("SELECT d FROM Department d WHERE d.active = :active", Department.class);

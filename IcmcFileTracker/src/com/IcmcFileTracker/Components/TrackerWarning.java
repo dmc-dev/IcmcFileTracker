@@ -14,7 +14,6 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
 import com.vaadin.ui.Label;
 import com.vaadin.ui.NativeSelect;
-import com.vaadin.ui.Notification;
 import com.vaadin.ui.VerticalLayout;
 
 public class TrackerWarning extends CustomComponent implements View, Listener{
@@ -116,7 +115,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		department.removeListener(this);
 		department.removeAllItems();
 		
-		for(Department d : Department.getAll() ){
+		for(Department d : Department.getAllActive() ){
 			department.addItem(d);
 		}
 		department.addItem(ALL);

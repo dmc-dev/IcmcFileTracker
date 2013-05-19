@@ -7,7 +7,6 @@ import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
-import javax.persistence.Id;
 import javax.persistence.InheritanceType;
 import javax.persistence.NoResultException;
 import javax.persistence.OneToOne;
@@ -67,6 +66,7 @@ public class TracerHead extends Tracer{
 	    return q.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static List<TracerHead> getOldTracers(boolean state, int days){
 	    EntityManager em = EMF.getEntityManager();
 	     
@@ -80,6 +80,7 @@ public class TracerHead extends Tracer{
 		return (List<TracerHead>) q.getResultList();
 	}
 	
+	@SuppressWarnings("unchecked")
 	public static List<TracerHead> getOldTracers(boolean state, Department department, int days){
 	    EntityManager em = EMF.getEntityManager();
 	     
@@ -91,6 +92,15 @@ public class TracerHead extends Tracer{
 	    q.setParameter("state", state);
 	    q.setParameter("department", department);
 	    
+		return (List<TracerHead>) q.getResultList();
+	}
+	
+	@SuppressWarnings("unchecked")
+	public static List<TracerHead> getTracersBy(LocalUser user){
+	    EntityManager em = EMF.getEntityManager();
+	     
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.localUser = :user ORDER BY t.date DESC", TracerHead.class);  
+	    q.setParameter("user", user);    
 		return (List<TracerHead>) q.getResultList();
 	}
 }

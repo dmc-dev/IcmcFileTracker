@@ -4,12 +4,8 @@ import java.util.logging.Logger;
 
 import com.IcmcFileTracker.Components.HomeView;
 import com.IcmcFileTracker.Components.NavBar;
-import com.IcmcFileTracker.Components.TrackerHistory;
-import com.IcmcFileTracker.Forms.DepartmentForm;
-import com.IcmcFileTracker.Forms.GenericForm;
 import com.IcmcFileTracker.Forms.LoginForm;
 import com.IcmcFileTracker.Forms.LoginListener;
-import com.IcmcFileTracker.helpers.DataInit;
 import com.IcmcFileTracker.model.*;
 
 import com.vaadin.annotations.Theme;
