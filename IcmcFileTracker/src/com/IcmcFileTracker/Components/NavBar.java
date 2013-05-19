@@ -21,11 +21,7 @@ public class NavBar extends CustomComponent{
 	private final VerticalLayout layout = new VerticalLayout();
 	
 	private MenuBar navBar = new MenuBar();
-	
-	
-	Panel viewPannel = new Panel();
-	
-	
+		
 	public NavBar(IcmcFileTrackerUI mainUI ) {
 		
 		setCompositionRoot(layout);
@@ -52,10 +48,6 @@ public class NavBar extends CustomComponent{
 		
 		
 		MenuItem view = navBar.addItem("View", null, null);
-		
-		
-		
-		
 		view.addItem("FileHistory", null, command);
 		view.addItem("CheckIns", null, command);
 		view.addItem("CheckOuts", null, command);
@@ -67,13 +59,10 @@ public class NavBar extends CustomComponent{
 		create.addItem(LocalUser.class.getSimpleName(), null, command);
 		create.addItem(Role.class.getSimpleName(), null, command);
 	
-
 		MenuItem adminView = admin.addItem("View", null, null);
 		adminView.addItem("Users", null, command);
 		
-		
 		navBar.setSizeFull();
 		layout.addComponent(navBar);
-		layout.addComponent(viewPannel);
 	}
 }

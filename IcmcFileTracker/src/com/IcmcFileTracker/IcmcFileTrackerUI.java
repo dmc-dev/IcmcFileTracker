@@ -47,7 +47,6 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
         navigator.addViewChangeListener(this);
         navigator.addView(LoginForm.VIEW_NAME, new LoginForm(this));
         
-       
 		this.setContent(layout);	
 	}
 

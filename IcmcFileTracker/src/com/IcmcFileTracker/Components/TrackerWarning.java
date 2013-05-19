@@ -145,6 +145,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 		
 		// warning_links
 		warning_links = new VerticalLayout();
+		warning_links.setSpacing(true);
 		mainLayout.addComponent(warning_links);
 		
 		return mainLayout;
