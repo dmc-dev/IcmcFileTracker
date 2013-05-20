@@ -45,10 +45,12 @@ public class CreateTracker extends CustomComponent implements View{
 	/**
 	 * 
 	 */
+	
+	private static final long serialVersionUID = 1L;
+	
 	public static final String VIEW_NAME = "Track";
 	private static final Logger log = Logger.getLogger(CreateTracker.class.getName());
 	
-	private static final long serialVersionUID = 1L;
 	private User user=null;
 	
 	/**
