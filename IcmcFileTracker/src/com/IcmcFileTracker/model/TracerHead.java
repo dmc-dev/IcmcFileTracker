@@ -30,7 +30,7 @@ public class TracerHead extends Tracer{
 
 	public void setTrace(Tracer trace) {
 		this.trace = trace;
-		localUser = trace.getLocalUser();
+		user = trace.getUser();
 		department = trace.getDepartment();	   
 		comment = trace.getComment();
 		date = trace.getDate();
@@ -72,9 +72,9 @@ public class TracerHead extends Tracer{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getByUser(LocalUser user){
+	public static List<Tracer> getByUser(User user){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.localUser = :user ORDER BY t.date DESC", TracerHead.class);  
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.user = :user ORDER BY t.date DESC", TracerHead.class);  
 	    q.setParameter("user", user);    
 		return q.getResultList();
 	}

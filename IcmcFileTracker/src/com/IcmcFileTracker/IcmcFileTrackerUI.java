@@ -6,6 +6,7 @@ import com.IcmcFileTracker.Components.HomeView;
 import com.IcmcFileTracker.Components.NavBar;
 import com.IcmcFileTracker.Forms.LoginForm;
 import com.IcmcFileTracker.Forms.LoginListener;
+import com.IcmcFileTracker.helpers.DataInit;
 import com.IcmcFileTracker.model.*;
 
 import com.vaadin.annotations.Theme;
@@ -19,7 +20,9 @@ import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 
 //@Theme("chameleon")
-@Theme("runo")
+@Theme("reindeer")
+//@Theme("liferay")
+//@Theme("runo")
 public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginListener{
 
 	private static final long serialVersionUID = 1L;
@@ -29,11 +32,12 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 	
 	final VerticalLayout layout = new VerticalLayout();
 	
-	public LocalUser user = null;
-	public Navigator navigator;
+	private User user = null;
+	private Navigator navigator;
 	
-	Component navBar = null;
-	Panel contentpanel = new Panel();
+	private Component navBar = null;
+	private Panel contentpanel = new Panel();
+
 
 	@Override
 	protected void init(VaadinRequest request) {
@@ -43,20 +47,24 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 		layout.setMargin(true);
 		layout.addComponent(contentpanel);
 		
+		new DataInit();
+		
+		/*
         navigator = new Navigator(this, contentpanel);
         navigator.addViewChangeListener(this);
         navigator.addView(LoginForm.VIEW_NAME, new LoginForm(this));
-        
+        */
+		
 		this.setContent(layout);	
 	}
 
 	@Override
-	public void onLoginSuccess(LocalUser user){
+	public void onLoginSuccess(User user){
 		this.user=user;
 		this.getPage().setTitle(TITLE+" "+user.getUserName()+" ("+user.getRole().getName()+")");
 		
 		if(navBar==null){
-			navBar = new NavBar(this);
+			navBar = new NavBar(navigator, user);
 		}
 		layout.addComponentAsFirst(navBar);
 		navigator.navigateTo(HomeView.VIEW_NAME); 
@@ -83,4 +91,13 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 	public void afterViewChange(ViewChangeEvent event) {
 		
 	}	
+
+	
+	public User getUser() {
+		return user;
+	}
+
+	public Navigator getNavigator() {
+		return navigator;
+	}
 }

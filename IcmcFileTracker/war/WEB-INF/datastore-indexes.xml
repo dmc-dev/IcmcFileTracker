@@ -13,12 +13,12 @@
     </datastore-index>
     
     <datastore-index kind="TracerHead" ancestor="false" source="manual">
-    	<property name="localUser_userName" direction="asc"/> 
+    	<property name="user_userName" direction="asc"/> 
     	<property name="date" direction="desc"/>
     </datastore-index>
     
     <datastore-index kind="Tracer" ancestor="false" source="manual">
-    	<property name="localUser_userName" direction="asc"/>
+    	<property name="user_userName" direction="asc"/>
     	<property name="date" direction="desc"/> 
     </datastore-index>
     

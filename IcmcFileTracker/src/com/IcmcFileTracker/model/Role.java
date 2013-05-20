@@ -62,7 +62,19 @@ public class Role implements Serializable{
 	@SuppressWarnings("unchecked")
 	public static List<Role> getAll(){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT u FROM Role u", Role.class);
+	    Query q = em.createQuery("SELECT r FROM Role r", Role.class);
 		return (List<Role>) q.getResultList();
+	}
+	
+	public static Role findByName(String name){
+	    EntityManager em = EMF.getEntityManager();	
+		    
+	    try{
+		    Query q = em.createQuery("SELECT r FROM Role r WHERE r.name = :name", Role.class);
+		    q.setParameter("name", name);
+		    return (Role) q.getSingleResult();
+	    } catch (NoResultException e){
+	    	return null;
+	    }
 	}
 }

@@ -14,7 +14,7 @@ import com.IcmcFileTracker.helpers.EMF;
 import com.google.appengine.datanucleus.annotations.Unowned;
 
 @Entity
-public class LocalUser implements Serializable{
+public class User implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
 	@Id   
@@ -70,24 +70,24 @@ public class LocalUser implements Serializable{
 		this.password = password;
 	}
 
-	public static LocalUser find(String userName){
+	public static User find(String userName){
 		EntityManager em = EMF.getEntityManager();
-	    return em.find(LocalUser.class, userName);
+	    return em.find(User.class, userName);
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<LocalUser> getAll(){
+	public static List<User> getAll(){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT u FROM LocalUser u", LocalUser.class);
-		return (List<LocalUser>) q.getResultList();
+	    Query q = em.createQuery("SELECT u FROM User u", User.class);
+		return (List<User>) q.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<LocalUser> getAllActive(){
+	public static List<User> getAllActive(){
 		
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT u FROM LocalUser u WHERE u.active = :active", LocalUser.class);
+	    Query q = em.createQuery("SELECT u FROM User u WHERE u.active = :active", User.class);
 	    q.setParameter("active", true);
-		return (List<LocalUser>) q.getResultList();
+		return (List<User>) q.getResultList();
 	}
 }

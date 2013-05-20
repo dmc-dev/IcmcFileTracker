@@ -10,7 +10,7 @@ import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
-public class TrackerHistory extends CustomComponent implements View{
+public class TracerHeadHistory extends CustomComponent implements View{
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -28,11 +28,11 @@ public class TrackerHistory extends CustomComponent implements View{
 	 * visual editor.
 	 */
 	
-	public static final String VIEW_NAME ="TrackerHistory";
+	public static final String VIEW_NAME ="TracerHeadHistory";
 	
 	BeanItemContainer<Tracer> beans = new BeanItemContainer<Tracer>(Tracer.class);
 	
-	public TrackerHistory() {
+	public TracerHeadHistory() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 

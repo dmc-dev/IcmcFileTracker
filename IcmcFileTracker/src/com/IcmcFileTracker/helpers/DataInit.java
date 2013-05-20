@@ -7,7 +7,7 @@ import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 
 import com.IcmcFileTracker.model.Department;
-import com.IcmcFileTracker.model.LocalUser;
+import com.IcmcFileTracker.model.User;
 import com.IcmcFileTracker.model.Role;
 
 
@@ -25,6 +25,7 @@ public class DataInit {
        try {
            em = emf.createEntityManager();
            
+           /*
            Department d1 = new Department();
            d1.setName("Istanbul");
            d1.setActive(true);
@@ -42,26 +43,30 @@ public class DataInit {
            user.setName("user");
            user.setLevel(1);
            user.setActive(true);
+           */
            
-           LocalUser u1 = new LocalUser();
+           User u1 = new User();
            u1.setUserName("danny");
            u1.setPassword("123");
            u1.setActive(true);
-           u1.setRole(admin);
+           u1.setRole(Role.findByName("admin"));
            
-           LocalUser u2 = new LocalUser();
+           User u2 = new User();
            u2.setUserName("fred");
            u2.setPassword("123");
            u2.setActive(true);
-           u2.setRole(user);
+           u2.setRole(Role.findByName("user"));
   
            
+           /*
            EntityTransaction et = em.getTransaction();
            et.begin();
            	em.persist(d1);
            	em.persist(d2);
            et.commit();
+           */
            
+           EntityTransaction et = em.getTransaction();
            et = em.getTransaction();
            et.begin();
            	em.persist(u1);

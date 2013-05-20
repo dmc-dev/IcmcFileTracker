@@ -17,7 +17,7 @@ import com.vaadin.ui.NativeSelect;
 import com.vaadin.ui.Panel;
 import com.vaadin.ui.VerticalLayout;
 
-public class TrackerWarning extends CustomComponent implements View, Listener{
+public class TracerHeadWarning extends CustomComponent implements View, Listener{
 
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -58,7 +58,7 @@ public class TrackerWarning extends CustomComponent implements View, Listener{
 	
 	private static final String ALL = "All";
 	
-	public TrackerWarning() {
+	public TracerHeadWarning() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 

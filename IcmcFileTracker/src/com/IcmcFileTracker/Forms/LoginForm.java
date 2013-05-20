@@ -2,7 +2,7 @@ package com.IcmcFileTracker.Forms;
 
 import java.util.logging.Logger;
 
-import com.IcmcFileTracker.model.LocalUser;
+import com.IcmcFileTracker.model.User;
 import com.vaadin.data.validator.AbstractValidator;
 import com.vaadin.event.ShortcutAction;
 import com.vaadin.event.ShortcutListener;
@@ -75,7 +75,7 @@ public class LoginForm extends CustomComponent implements ClickListener, View{
 					
 		String password = passWord.getValue();
 					
-		LocalUser u = LocalUser.find(username);
+		User u = User.find(username);
         
         if(u!=null && u.isActive() && u.getPassword().equals(password)){
 	      	listener.onLoginSuccess(u);

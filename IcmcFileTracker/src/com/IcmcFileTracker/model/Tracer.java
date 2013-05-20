@@ -27,7 +27,7 @@ public class Tracer implements Serializable{
     private Key id;
 	
 	@Unowned
-	protected LocalUser localUser;
+	protected User user;
 	
 	@Unowned
 	protected Department department;
@@ -60,12 +60,12 @@ public class Tracer implements Serializable{
 		this.id = id;
 	}
 
-	public LocalUser getLocalUser() {
-		return localUser;
+	public User getUser() {
+		return user;
 	}
 
-	public void setLocalUser(LocalUser param) {
-		this.localUser = param;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Department getDepartment() {
@@ -102,7 +102,7 @@ public class Tracer implements Serializable{
 
 	@Override
 	public String toString() {
-		return id+" "+checkIN+" "+date+" "+localUser+" "+comment;
+		return id+" "+checkIN+" "+date+" "+user+" "+comment;
 	}
 	
 	
@@ -119,11 +119,21 @@ public class Tracer implements Serializable{
 	    Query q = em.createQuery("SELECT t FROM Tracer t ORDER BY t.date DESC", Tracer.class);
 	    return q.getResultList();
 	}
+
+
+	@SuppressWarnings("unchecked")
+	public static List<Tracer> getByFileId(String id){
+	    EntityManager em = EMF.getEntityManager();	
+		    
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.fileid = :id ORDER BY t.date DESC", Tracer.class);   
+		q.setParameter("id", id);
+		return q.getResultList();
+	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getByUser(LocalUser user){
+	public static List<Tracer> getByUser(User user){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.localUser = :user ORDER BY t.date DESC", Tracer.class);  
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.user = :user ORDER BY t.date DESC", Tracer.class);  
 	    q.setParameter("user", user);    
 		return q.getResultList();
 	}
