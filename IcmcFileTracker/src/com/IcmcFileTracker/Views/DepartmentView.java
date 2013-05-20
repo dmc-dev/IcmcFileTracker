@@ -79,7 +79,7 @@ public class DepartmentView extends CustomComponent implements View, ItemSetChan
 		// table
 		table = new Table();
 		table.setCaption("Departments");
-		//table.set›mmediate(false);
+		table.setImmediate(true);
 		table.setWidth("-1px");
 		table.setHeight("-1px");
 		//table.set›nvalidAllowed(false);
