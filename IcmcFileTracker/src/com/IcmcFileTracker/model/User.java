@@ -6,6 +6,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Query;
@@ -70,6 +71,14 @@ public class User implements Serializable{
 		this.password = password;
 	}
 
+	public void persist(){
+	    EntityManager em = EMF.getEntityManager();
+	    EntityTransaction et = em.getTransaction();
+	    et.begin();
+	    em.persist(this);
+	    et.commit();
+	}
+	
 	public static User find(String userName){
 		EntityManager em = EMF.getEntityManager();
 	    return em.find(User.class, userName);

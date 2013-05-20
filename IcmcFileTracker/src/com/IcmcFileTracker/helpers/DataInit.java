@@ -18,63 +18,21 @@ public class DataInit {
 	public DataInit(){
 	
 		log.info("running data init");
+	
+		  User u1 = new User();
+          u1.setUserName("danny");
+          u1.setPassword("123");
+          u1.setActive(true);
+          u1.setRole(Role.findByName("admin"));
+          
+          User u2 = new User();
+          u2.setUserName("fred");
+          u2.setPassword("123");
+          u2.setActive(true);
+          u2.setRole(Role.findByName("user"));
+          
+          u1.persist();
+          u2.persist();
 		
-	   EntityManagerFactory emf = EMF.get();
-       EntityManager em = null;
-       
-       try {
-           em = emf.createEntityManager();
-           
-           /*
-           Department d1 = new Department();
-           d1.setName("Istanbul");
-           d1.setActive(true);
-           
-           Department d2 = new Department();
-           d2.setName("London");
-           d2.setActive(true);
-           
-           Role admin = new Role();
-           admin.setName("admin");
-           admin.setLevel(0);
-           admin.setActive(true);
-
-           Role user = new Role();
-           user.setName("user");
-           user.setLevel(1);
-           user.setActive(true);
-           */
-           
-           User u1 = new User();
-           u1.setUserName("danny");
-           u1.setPassword("123");
-           u1.setActive(true);
-           u1.setRole(Role.findByName("admin"));
-           
-           User u2 = new User();
-           u2.setUserName("fred");
-           u2.setPassword("123");
-           u2.setActive(true);
-           u2.setRole(Role.findByName("user"));
-  
-           
-           /*
-           EntityTransaction et = em.getTransaction();
-           et.begin();
-           	em.persist(d1);
-           	em.persist(d2);
-           et.commit();
-           */
-           
-           EntityTransaction et = em.getTransaction();
-           et = em.getTransaction();
-           et.begin();
-           	em.persist(u1);
-           	em.persist(u2);
-           et.commit();
-           
-       }finally{
-           em.close();
-       }   
 	}
 }
