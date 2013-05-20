@@ -1,4 +1,4 @@
-package com.IcmcFileTracker.Components;
+package com.IcmcFileTracker.Views;
 
 import com.IcmcFileTracker.model.User;
 import com.IcmcFileTracker.model.Tracer;
