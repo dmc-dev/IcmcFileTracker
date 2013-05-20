@@ -53,6 +53,7 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 		//edit = new CheckBox("Edit Departments", new MethodProperty<Boolean>(table, "editable"));
 		//table.addItemSetChangeListener(this);
 		table.addPropertySetChangeListener(this);
+		
 	}
 
 	@Override
