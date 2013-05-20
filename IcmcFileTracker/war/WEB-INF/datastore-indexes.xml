@@ -6,20 +6,21 @@
 		<property name="date" direction="desc"/>
 	</datastore-index>
     
-    <datastore-index kind="TracerHead" ancestor="false" source="manual">
+	<datastore-index kind="TracerHead" ancestor="false" source="manual">
         <property name="checkIN" direction="asc"/>
-        <property name="department_id" direction="asc"/>
+        <property name="department_name" direction="asc"/>
         <property name="date" direction="desc"/>
     </datastore-index>
-    
+  
     <datastore-index kind="TracerHead" ancestor="false" source="manual">
     	<property name="user_userName" direction="asc"/> 
     	<property name="date" direction="desc"/>
     </datastore-index>
+  
     
     <datastore-index kind="Tracer" ancestor="false" source="manual">
     	<property name="user_userName" direction="asc"/>
     	<property name="date" direction="desc"/> 
     </datastore-index>
-    
+      
 </datastore-indexes>
