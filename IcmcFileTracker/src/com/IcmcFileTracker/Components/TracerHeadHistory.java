@@ -30,17 +30,18 @@ public class TracerHeadHistory extends CustomComponent implements View{
 	
 	public static final String VIEW_NAME ="TracerHeadHistory";
 	
-	BeanItemContainer<Tracer> beans = new BeanItemContainer<Tracer>(Tracer.class);
+	//BeanItemContainer<Tracer> beans = new BeanItemContainer<Tracer>(Tracer.class);
 	
 	public TracerHeadHistory() {
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
+		/*
 		table.setContainerDataSource(beans);
 		table.setColumnCollapsingAllowed(true);
 		table.setColumnReorderingAllowed(true);
 		table.setVisibleColumns(Tracer.getVisableColumes());
-		
+		*/
 		// TODO add user code here
 	}
 
@@ -58,7 +59,7 @@ public class TracerHeadHistory extends CustomComponent implements View{
 		setHeight("100.0%");
 		
 		// table
-		table = new Table();
+		table = new TracerTable();
 		table.setCaption("Recent Tracker History");
 		//table.set›mmediate(false);
 		table.setWidth("-1px");
@@ -72,10 +73,13 @@ public class TracerHeadHistory extends CustomComponent implements View{
 	@Override
 	public void enter(ViewChangeEvent event) {
 		// TODO Auto-generated method stub
-				
-		beans.removeAllItems();
+		
+		
+		table.removeAllItems();
+		//beans.removeAllItems();
 		for(Tracer t : TracerHead.getLatest()){
-			beans.addItem(t);
+			
+			table.addItem(t);
 		}
 	}
 
