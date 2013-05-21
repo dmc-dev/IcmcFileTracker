@@ -1,5 +1,7 @@
 package com.IcmcFileTracker.Components;
 
+import java.util.List;
+
 import com.IcmcFileTracker.model.Tracer;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.ui.Table;
@@ -19,4 +21,10 @@ public class TracerTable extends Table {
 		
 	} 
 	
+	public void replaceAllItems(List list){
+		removeAllItems();
+		for(Object o : list){
+			addItem(o);
+		}
+	}
 }
