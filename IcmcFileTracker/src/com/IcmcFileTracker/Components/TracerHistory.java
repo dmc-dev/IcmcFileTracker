@@ -42,7 +42,7 @@ public class TracerHistory extends CustomComponent implements View, ClickListene
 	
 	public static final String VIEW_NAME ="FileHistory";
 	
-	final TextField fileid =  new TextField("FileID", new MethodProperty<String>(this, "id"));
+	final TextField fileid =  new TextField(null, new MethodProperty<String>(this, "id"));
 	
 	private String id = "";
 	
