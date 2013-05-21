@@ -47,6 +47,10 @@ public class Tracer implements Serializable{
 	public static String[] getVisableColumes(){
 		return new String []{"fileid", "checkIN", "department", "date", "user", "comment"};
 	}
+	public static String[] getVisableColumesNoUser(){
+		return new String []{"fileid", "checkIN", "department", "date", "comment"};
+	}
+	
 	
 	public String getFileid() {
 		return fileid;
