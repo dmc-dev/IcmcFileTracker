@@ -39,15 +39,13 @@ public class MyView extends CustomComponent implements View{
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		all.setCaption(user.getUserName()+" Has Last Commit");
-		all.setVisibleColumns(Tracer.getVisableColumesNoUser());
-		
-
-		all.setCaption(user.getUserName()+" All Commit");
+		owned.setCaption(user.getUserName()+" Has Last Commit");
 		owned.setVisibleColumns(Tracer.getVisableColumesNoUser());
 		
+		all.setCaption(user.getUserName()+" All Commit");
+		all.setVisibleColumns(Tracer.getVisableColumesNoUser());
+		
 		this.user=user;
-	
 	}
 
 	@Override
@@ -69,7 +67,6 @@ public class MyView extends CustomComponent implements View{
 	private VerticalLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new VerticalLayout();
-		//mainLayout.set›mmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
 		mainLayout.setMargin(true);
@@ -90,24 +87,19 @@ public class MyView extends CustomComponent implements View{
 	private VerticalSplitPanel buildVerticalSplitPanel_2() {
 		// common part: create layout
 		verticalSplitPanel_2 = new VerticalSplitPanel();
-		//verticalSplitPanel_2.set›mmediate(false);
 		verticalSplitPanel_2.setWidth("-1px");
-		verticalSplitPanel_2.setHeight("800px");
+		verticalSplitPanel_2.setHeight("600px");
 		
 		// table_1
 		owned = new TracerTable();
-		//table_1.set›mmediate(false);
 		owned.setWidth("-1px");
 		owned.setHeight("-1px");
-		//table_1.set›nvalidAllowed(false);
 		verticalSplitPanel_2.addComponent(owned);
 		
 		// table_2
 		all = new TracerTable();
-		//table_2.set›mmediate(false);
 		all.setWidth("-1px");
 		all.setHeight("-1px");
-		//table_2.set›nvalidAllowed(false);
 		verticalSplitPanel_2.addComponent(all);
 		
 		return verticalSplitPanel_2;
