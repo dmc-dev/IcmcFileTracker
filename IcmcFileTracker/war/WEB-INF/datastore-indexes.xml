@@ -22,5 +22,10 @@
     	<property name="user_userName" direction="asc"/>
     	<property name="date" direction="desc"/> 
     </datastore-index>
+    
+    <datastore-index kind="Tracer" ancestor="false" source="manual">
+        <property name="fileid" direction="asc"/>
+        <property name="date" direction="desc"/>
+    </datastore-index>
       
 </datastore-indexes>
