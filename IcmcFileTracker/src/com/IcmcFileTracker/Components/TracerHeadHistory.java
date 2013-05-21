@@ -39,6 +39,7 @@ public class TracerHeadHistory extends CustomComponent implements View{
 		table.setContainerDataSource(beans);
 		table.setColumnCollapsingAllowed(true);
 		table.setColumnReorderingAllowed(true);
+		table.setVisibleColumns(Tracer.getVisableColumes());
 		
 		// TODO add user code here
 	}
