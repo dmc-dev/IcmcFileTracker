@@ -126,11 +126,11 @@ public class Tracer implements Serializable{
 
 
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getByFileId(String id){
+	public static List<Tracer> getByFileId(String fileid){
 	    EntityManager em = EMF.getEntityManager();	
 		    
-	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.fileid = :id ORDER BY t.date DESC", Tracer.class);   
-		q.setParameter("id", id);
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.fileid = :fileid ORDER BY t.date DESC", Tracer.class);   
+		q.setParameter("fileid", fileid);
 		return q.getResultList();
 	}
 	
