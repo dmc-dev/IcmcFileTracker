@@ -36,8 +36,7 @@ public class HomeView extends CustomComponent  implements View {
 		
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
-
-		this.setCaption(VIEW_NAME);
+		mainLayout.setCaption(VIEW_NAME);
 		// TODO add user code here
 	}
 
