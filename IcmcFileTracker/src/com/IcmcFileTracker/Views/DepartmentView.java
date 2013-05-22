@@ -125,6 +125,7 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 	@Override
 	public void valueChange(ValueChangeEvent event) {
 		// TODO Auto-generated method stub
+		Notification.show(event.getProperty().getValue().toString(), Notification.Type.ERROR_MESSAGE);
 		Notification.show(table.getItem(table.getValue()).toString(), Notification.Type.ERROR_MESSAGE);
 	}
 
