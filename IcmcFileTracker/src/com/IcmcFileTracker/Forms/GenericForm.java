@@ -14,7 +14,9 @@ public class GenericForm<T> extends CustomComponent {
 	private static final long serialVersionUID = 1L;
     
 	FormLayout layout = new FormLayout();
-     	
+    
+	FieldGroup fieldGroup;
+	
     public GenericForm(T model) {
     	
     	setCompositionRoot(layout);
@@ -24,7 +26,7 @@ public class GenericForm<T> extends CustomComponent {
         BeanItem<T> bean = new BeanItem<T>(model);
         
         @SuppressWarnings("unchecked")
-		FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());
+        FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());
         
         fieldGroup.setItemDataSource(bean);
 

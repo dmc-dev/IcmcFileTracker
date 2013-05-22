@@ -49,7 +49,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	
 	final Form form = new Form();
 	
-	final GenericForm f = new GenericForm<Department>(new Department());
+	GenericForm f = new GenericForm<Department>(new Department());
 	
 	BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
 	
@@ -149,8 +149,12 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	public void valueChange(ValueChangeEvent event) {
 		// TODO Auto-generated method stub
 		
-		form.setItemDataSource((table.getItem(table.getValue())));
-		form.setVisible(true);
+		//form.setItemDataSource((table.getItem(table.getValue())));
+		
+		Department d = (Department) event.getProperty().getValue();
+		f =  new GenericForm<Department>(d);
+		
+		f.setVisible(true);
 		
 		Notification.show(event.getProperty().getValue().toString(), Notification.Type.ERROR_MESSAGE);
 		Notification.show(table.getItem(table.getValue()).toString(), Notification.Type.ERROR_MESSAGE);
