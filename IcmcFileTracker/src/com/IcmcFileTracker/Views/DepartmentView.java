@@ -116,7 +116,8 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
         //newBean.setEnabled(false);
 		
 		Department d = new Department();
-		table.select(beans.addItem(d));
+		beans.addItem(d);
+		table.select(d);
         
      
         //form.setDataSource(d);
