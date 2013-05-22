@@ -7,6 +7,8 @@ import com.vaadin.data.Container.ItemSetChangeEvent;
 import com.vaadin.data.Container.ItemSetChangeListener;
 import com.vaadin.data.Container.PropertySetChangeEvent;
 import com.vaadin.data.Container.PropertySetChangeListener;
+import com.vaadin.data.Property.ValueChangeEvent;
+import com.vaadin.data.Property.ValueChangeListener;
 import com.vaadin.data.util.BeanItemContainer;
 import com.vaadin.data.util.MethodProperty;
 import com.vaadin.navigator.View;
@@ -17,7 +19,7 @@ import com.vaadin.ui.Notification;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
 
-public class DepartmentView extends CustomComponent implements View, PropertySetChangeListener{
+public class DepartmentView extends CustomComponent implements View, PropertySetChangeListener, ValueChangeListener{
 	
 	/*- VaadinEditorProperties={"grid":"RegularGrid,20","showGrid":true,"snapToGrid":true,"snapToObject":true,"movingGuides":false,"snappingDistance":10} */
 
@@ -50,9 +52,12 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 		table.setColumnCollapsingAllowed(true);
 		table.setColumnReorderingAllowed(true);
 		
+		table.setSelectable(true);
+		
 		//edit = new CheckBox("Edit Departments", new MethodProperty<Boolean>(table, "editable"));
 		//table.addItemSetChangeListener(this);
-		table.addPropertySetChangeListener(this);
+		//table.addPropertySetChangeListener(this);
+		table.addValueChangeListener(this);
 		
 	}
 
@@ -115,6 +120,12 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 		// TODO Auto-generated method stub
 		Notification.show(event.getContainer().toString(), Notification.Type.ERROR_MESSAGE);
 		
+	}
+
+	@Override
+	public void valueChange(ValueChangeEvent event) {
+		// TODO Auto-generated method stub
+		Notification.show(table.getItem(table.getValue()).toString(), Notification.Type.ERROR_MESSAGE);
 	}
 
 }
