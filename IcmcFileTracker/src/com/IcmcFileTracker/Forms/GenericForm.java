@@ -24,6 +24,7 @@ public class GenericForm<T> extends CustomComponent {
     	layout.addComponent(new Label(model.getClass().getSimpleName()));
     	
         BeanItem<T> bean = new BeanItem<T>(model);
+       
         
         @SuppressWarnings("unchecked")
         FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());

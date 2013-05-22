@@ -147,36 +147,19 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 
 	@Override
 	public void valueChange(ValueChangeEvent event) {
-		// TODO Auto-generated method stub
-		
-		//form.setItemDataSource((table.getItem(table.getValue())));
 		
 		Department d = (Department) event.getProperty().getValue();
-		f =  new GenericForm<Department>(d);
-		
-		f.setVisible(true);
-		
-		Notification.show(event.getProperty().getValue().toString(), Notification.Type.ERROR_MESSAGE);
-		Notification.show(table.getItem(table.getValue()).toString(), Notification.Type.ERROR_MESSAGE);
+		mainLayout.addComponent(new GenericForm<Department>(d));
 	}
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		
-		// Create a new item; this will create a new bean
-        Object itemId = beans.addItem(new Department());
-       
-        form.setItemDataSource(table.getItem(itemId));
- 
-        // The form was opened for editing a new item
-        table.setData(itemId);
-        
-        //table.select(itemId);
-        //table.setEnabled(false);
         newBean.setEnabled(false);
-        
-        f.setVisible(true);
 		
+		Department d = new Department();
+        table.setValue(beans.addItem(d));
+     
+		mainLayout.addComponent(new GenericForm<Department>(d));
 	}
 
 }
