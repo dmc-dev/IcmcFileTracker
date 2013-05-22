@@ -113,12 +113,13 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-        newBean.setEnabled(false);
+        //newBean.setEnabled(false);
 		
 		Department d = new Department();
-        table.setValue(beans.addItem(d));
+		table.select(beans.addItem(d));
+        
      
-        form.setDataSource(d);
+        //form.setDataSource(d);
 	}
 
 }
