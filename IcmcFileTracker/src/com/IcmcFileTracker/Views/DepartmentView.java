@@ -55,7 +55,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		table.setColumnReorderingAllowed(true);
 		table.setSelectable(true);
 		table.addValueChangeListener(this);
-		
+		table.setBuffered(false);
 			
 	    
 	  
