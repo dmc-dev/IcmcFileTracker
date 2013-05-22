@@ -34,6 +34,8 @@ public class GenericForm<T> extends CustomComponent {
         
         FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());
         
+        fieldGroup.setBuffered(false);
+        
         fieldGroup.setItemDataSource(bean);
 
         fieldGroup.setFieldFactory(new EnhancedFieldGroupFieldFactory());
