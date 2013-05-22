@@ -19,13 +19,12 @@ public class GenericForm<T> extends CustomComponent {
     	
     	setCompositionRoot(layout);
         
-    	
-    	
     	layout.addComponent(new Label(model.getClass().getSimpleName()));
     	
         BeanItem<T> bean = new BeanItem<T>(model);
         
-        FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());
+        @SuppressWarnings("unchecked")
+		FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());
         
         fieldGroup.setItemDataSource(bean);
 
