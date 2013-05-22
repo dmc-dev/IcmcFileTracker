@@ -66,7 +66,6 @@ public class HomeView extends CustomComponent  implements View {
 	private VerticalSplitPanel buildVerticalSplitPanel_1() {
 		// common part: create layout
 		verticalSplitPanel_1 = new VerticalSplitPanel();
-		verticalSplitPanel_1.setCaption("Home");
 		verticalSplitPanel_1.setImmediate(false);
 		verticalSplitPanel_1.setWidth("-1px");
 		verticalSplitPanel_1.setHeight("600px");
