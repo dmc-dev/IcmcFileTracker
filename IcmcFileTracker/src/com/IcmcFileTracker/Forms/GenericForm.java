@@ -26,12 +26,10 @@ public class GenericForm<T> extends CustomComponent {
     	
     	layout.removeAllComponents();
     	
-    	layout.addComponent(new Label(model.getClass().getSimpleName()));
+    	setCaption(model.getClass().getSimpleName());
     	
         BeanItem<T> bean = new BeanItem<T>(model);
-       
-        
-        
+              
         FieldGroup fieldGroup = new BeanFieldGroup<T>((Class<T>) model.getClass());
         
         fieldGroup.setBuffered(false);

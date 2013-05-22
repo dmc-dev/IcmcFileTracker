@@ -57,7 +57,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		table.addValueChangeListener(this);
 		
 			
-	    form.setCaption("Edit Item");
+	    
 	  
 	    newBean.addClickListener(this);
 	    
