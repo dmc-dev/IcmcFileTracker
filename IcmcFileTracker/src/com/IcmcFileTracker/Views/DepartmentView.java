@@ -15,6 +15,7 @@ import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.CustomComponent;
+import com.vaadin.ui.Form;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Table;
 import com.vaadin.ui.VerticalLayout;
@@ -40,6 +41,8 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 	 * visual editor.
 	 */
 	
+	final Form form = new Form();
+	
 	BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
 	
 	public static final String VIEW_NAME = "DepartmentView";
@@ -59,6 +62,13 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 		//table.addPropertySetChangeListener(this);
 		table.addValueChangeListener(this);
 		
+		
+		
+	    form.setCaption("Edit Item");
+	    form.setVisible(false);
+	    form.setBuffered(true);
+		
+	    mainLayout.addComponent(form);
 	}
 
 	@Override
@@ -125,6 +135,10 @@ public class DepartmentView extends CustomComponent implements View, PropertySet
 	@Override
 	public void valueChange(ValueChangeEvent event) {
 		// TODO Auto-generated method stub
+		
+		form.setItemDataSource((table.getItem(table.getValue())));
+		form.setVisible(true);
+		
 		Notification.show(event.getProperty().getValue().toString(), Notification.Type.ERROR_MESSAGE);
 		Notification.show(table.getItem(table.getValue()).toString(), Notification.Type.ERROR_MESSAGE);
 	}
