@@ -50,13 +50,14 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
+		table.setCaption(VIEW_NAME);
 		table.setContainerDataSource(beans);
 		table.setColumnCollapsingAllowed(true);
 		table.setColumnReorderingAllowed(true);
 		table.setSelectable(true);
 		table.addValueChangeListener(this);
 		table.setBuffered(false);
-			
+		table.setImmediate(true);
 	    
 	  
 	    newBean.addClickListener(this);
@@ -87,7 +88,6 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	
 		table = new Table();
 		table.setCaption("Departments");
-		table.setImmediate(true);
 		table.setWidth("-1px");
 		table.setHeight("-1px");
 		mainLayout.addComponent(table);

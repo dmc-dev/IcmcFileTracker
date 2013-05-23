@@ -65,7 +65,7 @@ public class LoginForm extends CustomComponent implements ClickListener, View{
 	
 	public void doLogin(){
 		
-		String username = userName.getValue();
+		String username = userName.getValue().trim();
 		if(username==null  || username.isEmpty())
 			return;
 		
@@ -73,7 +73,7 @@ public class LoginForm extends CustomComponent implements ClickListener, View{
 		if(!passWord.isValid())
 			return;
 					
-		String password = passWord.getValue();
+		String password = passWord.getValue().trim();
 					
 		User u = User.find(username);
         
