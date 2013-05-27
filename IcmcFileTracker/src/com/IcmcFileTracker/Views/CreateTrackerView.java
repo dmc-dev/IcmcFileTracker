@@ -18,6 +18,7 @@ import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.ui.ComboBox;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.OptionGroup;
 import com.vaadin.ui.Table;
@@ -170,6 +171,8 @@ public class CreateTrackerView extends CustomComponent implements View{
 		setWidth("100.0%");
 		setHeight("100.0%");
 		
+		mainLayout.addComponent(new Label(this.VIEW_NAME));
+		
 		// horizontalLayout_1
 		horizontalLayout_1 = buildHorizontalLayout_1();
 		mainLayout.addComponent(horizontalLayout_1);
@@ -178,8 +181,8 @@ public class CreateTrackerView extends CustomComponent implements View{
 		table = new TracerTable();
 		table.setCaption("Check Out History ");
 		//table.set›mmediate(false);
-		table.setWidth("580px");
-		table.setHeight("260px");
+		table.setWidth("600px");
+		table.setHeight("300px");
 		//table.set›nvalidAllowed(false);
 		mainLayout.addComponent(table);
 		
@@ -193,7 +196,7 @@ public class CreateTrackerView extends CustomComponent implements View{
 		//horizontalLayout_1.set›mmediate(false);
 		horizontalLayout_1.setWidth("-1px");
 		horizontalLayout_1.setHeight("-1px");
-		horizontalLayout_1.setMargin(true);
+		//horizontalLayout_1.setMargin(true);
 		horizontalLayout_1.setSpacing(true);
 		
 		// fileID
