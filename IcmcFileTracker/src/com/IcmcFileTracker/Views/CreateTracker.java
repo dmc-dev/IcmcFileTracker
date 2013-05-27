@@ -1,9 +1,10 @@
-package com.IcmcFileTracker.Components;
+package com.IcmcFileTracker.Views;
 
 import java.util.Calendar;
 import java.util.logging.Logger;
 
 
+import com.IcmcFileTracker.Components.TracerTable;
 import com.IcmcFileTracker.helpers.InOutObj;
 import com.IcmcFileTracker.model.Department;
 import com.IcmcFileTracker.model.Tracer;

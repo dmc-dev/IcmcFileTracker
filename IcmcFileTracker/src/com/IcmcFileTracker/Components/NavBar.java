@@ -2,10 +2,11 @@ package com.IcmcFileTracker.Components;
 
 import com.IcmcFileTracker.IcmcFileTrackerUI;
 import com.IcmcFileTracker.Forms.GenericForm;
+import com.IcmcFileTracker.Views.CreateTracker;
 import com.IcmcFileTracker.Views.DepartmentView;
+import com.IcmcFileTracker.Views.FileHistoryView;
 import com.IcmcFileTracker.Views.HomeView;
 import com.IcmcFileTracker.Views.MyView;
-import com.IcmcFileTracker.Views.TableExample;
 import com.IcmcFileTracker.model.Department;
 import com.IcmcFileTracker.model.User;
 import com.IcmcFileTracker.model.Role;
@@ -50,29 +51,17 @@ public class NavBar extends CustomComponent{
 		MenuItem track = navBar.addItem(CreateTracker.VIEW_NAME, null, command);
 		navigator.addView(CreateTracker.VIEW_NAME, new CreateTracker(user));
 		
-		MenuItem fileView = navBar.addItem(TracerHistory.VIEW_NAME, null, command);
-		navigator.addView(TracerHistory.VIEW_NAME, new TracerHistory());
+		MenuItem fileView = navBar.addItem(FileHistoryView.VIEW_NAME, null, command);
+		navigator.addView(FileHistoryView.VIEW_NAME, new FileHistoryView());
 		
 		MenuItem userView = navBar.addItem(user.getUserName(), null, command);
 		navigator.addView(user.getUserName(), new MyView(user));
 		
 	
-		MenuItem temp = navBar.addItem("temp", null, command);
-		navigator.addView("temp", new TableExample());
-	
 		MenuItem admin = navBar.addItem("Admin", null, null);
 		
 		MenuItem create = admin.addItem(DepartmentView.VIEW_NAME, null, command);
 		navigator.addView(DepartmentView.VIEW_NAME, new DepartmentView());
-		/*
-		MenuItem create = admin.addItem("New", null, null);
-		create.addItem(User.class.getSimpleName(), null, command);
-		create.addItem(Department.class.getSimpleName(), null, command);
-		
-		MenuItem adminView = admin.addItem("View", null, null);
-		adminView.addItem(User.class.getSimpleName(), null, command);
-		adminView.addItem(Department.class.getSimpleName(), null, command);
-		*/
 		
 		//navBar.setSizeFull();
 		navBar.setSizeUndefined();
