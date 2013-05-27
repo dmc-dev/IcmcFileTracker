@@ -86,12 +86,18 @@ public class MyView extends CustomComponent implements View{
 		verticalSplitPanel_2.setWidth("100.0%");
 		verticalSplitPanel_2.setHeight("100.0%");
 		
+		
+		
 		// table_1
 		owned = new TracerTable();
 		//owned.setWidth("-1px");
 		//owned.setHeight("-1px");
-		//verticalSplitPanel_2.addComponent(new Label(user.getUserName()+" Has Last Commit"));
-		verticalSplitPanel_2.addComponent(owned);
+		//verticalSplitPanel_2.addComponent(owned);
+		
+		VerticalLayout lhs = new VerticalLayout();
+		lhs.addComponent(new Label("Trackers Owned by "+user.getUserName()));
+		lhs.addComponent(owned);
+		verticalSplitPanel_2.addComponent(lhs);
 		
 		// table_2
 		all = new TracerTable(user.getUserName()+" All Commit");
