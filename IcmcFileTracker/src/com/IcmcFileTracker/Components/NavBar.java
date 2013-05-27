@@ -7,6 +7,7 @@ import com.IcmcFileTracker.Views.DepartmentView;
 import com.IcmcFileTracker.Views.FileHistoryView;
 import com.IcmcFileTracker.Views.HomeView;
 import com.IcmcFileTracker.Views.MyView;
+import com.IcmcFileTracker.Views.NewUserView;
 import com.IcmcFileTracker.model.Department;
 import com.IcmcFileTracker.model.User;
 import com.IcmcFileTracker.model.Role;
@@ -64,9 +65,12 @@ public class NavBar extends CustomComponent{
 		
 			MenuItem create = admin.addItem(DepartmentView.VIEW_NAME, null, command);
 			navigator.addView(DepartmentView.VIEW_NAME, new DepartmentView());
+			
+			MenuItem newUsers = admin.addItem(NewUserView.VIEW_NAME, null, command);
+			navigator.addView(NewUserView.VIEW_NAME, new NewUserView());
 		}
+		
 		navBar.setSizeFull();
-		//navBar.setSizeUndefined();
 		layout.addComponent(navBar);
 	}
 }
