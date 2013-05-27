@@ -59,6 +59,7 @@ public class NewUserView extends CustomComponent implements View{
 		role.select(last);
 		role.setNullSelectionAllowed(false);
 		
+		table_1.setContainerDataSource(beans);
 		
 		// TODO add user code here
 	}
