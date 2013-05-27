@@ -90,7 +90,7 @@ public class MyView extends CustomComponent implements View{
 		owned = new TracerTable();
 		//owned.setWidth("-1px");
 		//owned.setHeight("-1px");
-		verticalSplitPanel_2.addComponent(new Label(user.getUserName()+" Has Last Commit"));
+		//verticalSplitPanel_2.addComponent(new Label(user.getUserName()+" Has Last Commit"));
 		verticalSplitPanel_2.addComponent(owned);
 		
 		// table_2
