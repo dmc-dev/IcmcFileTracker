@@ -134,7 +134,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// password
 		password = new TextField();
 		password.setCaption("Password");
-		password.setImmediate(false);
+		password.setImmediate(true);
 		password.setWidth("-1px");
 		password.setHeight("-1px");
 		//password.set›nvalidAllowed(false);
