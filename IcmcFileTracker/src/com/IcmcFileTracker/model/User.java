@@ -74,7 +74,9 @@ public class User implements Serializable{
 	public void persist(){
 	    EntityManager em = EMF.getEntityManager();
 	    EntityTransaction et = em.getTransaction();
-	    et.begin();
+	    if(!et.isActive()){
+	    	et.begin();
+	    }
 	    em.persist(this);
 	    et.commit();
 	}
