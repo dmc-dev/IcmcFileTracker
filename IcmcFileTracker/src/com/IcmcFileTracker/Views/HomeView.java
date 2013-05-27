@@ -68,7 +68,7 @@ public class HomeView extends CustomComponent  implements View {
 		verticalSplitPanel_1 = new HorizontalSplitPanel();
 		verticalSplitPanel_1.setImmediate(false);
 		verticalSplitPanel_1.setWidth("-1px");
-		verticalSplitPanel_1.setHeight("600px");
+		verticalSplitPanel_1.setHeight("-1px");
 		
 		// trackerHistory_1
 		history = new TracerHeadHistory();
