@@ -38,7 +38,7 @@ public class NewUserView extends CustomComponent {
 	 * visual editor.
 	 */
 	
-	public static final String VIEW_NAME = "CreateUsers";
+	public static final String VIEW_NAME = "CreateUser";
 	
 	public NewUserView() {
 		buildMainLayout();
