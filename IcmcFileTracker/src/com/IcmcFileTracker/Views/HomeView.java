@@ -73,15 +73,15 @@ public class HomeView extends CustomComponent  implements View {
 		// trackerHistory_1
 		history = new TracerHeadHistory();
 		history.setImmediate(false);
-		//history.setWidth("100.0%");
-		//history.setHeight("100.0%");
+		history.setWidth("100.0%");
+		history.setHeight("100.0%");
 		verticalSplitPanel_1.addComponent(history);
 		
 		// trackerWarning_1
 		warn = new TracerHeadWarning();
 		warn.setImmediate(false);
-		//warn.setWidth("100.0%");
-		//warn.setHeight("100.0%");
+		warn.setWidth("100.0%");
+		warn.setHeight("100.0%");
 		verticalSplitPanel_1.addComponent(warn);
 		
 		return verticalSplitPanel_1;
