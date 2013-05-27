@@ -16,6 +16,8 @@ public class Role implements Serializable{
 	private int level;
 
 	private boolean active=true;
+
+	public static final String admin="admin";
 	
 	public int getLevel() {
 		return level;
@@ -46,6 +48,10 @@ public class Role implements Serializable{
 		this.name = name;
 	}
 
+	public boolean isRole(String role){
+		return name.equals(role);
+	}
+	
 	public void persist(){
 	    EntityManager em = EMF.getEntityManager();
 	    EntityTransaction et = em.getTransaction();

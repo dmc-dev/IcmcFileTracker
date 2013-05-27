@@ -5,7 +5,9 @@ import java.util.logging.Logger;
 import com.IcmcFileTracker.Components.NavBar;
 import com.IcmcFileTracker.Forms.LoginForm;
 import com.IcmcFileTracker.Forms.LoginListener;
+import com.IcmcFileTracker.Views.DepartmentView;
 import com.IcmcFileTracker.Views.HomeView;
+import com.IcmcFileTracker.Views.NewUserView;
 import com.IcmcFileTracker.helpers.DataInit;
 import com.IcmcFileTracker.model.*;
 
@@ -80,6 +82,14 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 			Notification.show("Un Authorized", Notification.Type.ERROR_MESSAGE);
 			return false;
 		}
+		
+		if(event.getViewName().equals(NewUserView.VIEW_NAME) || event.getViewName().equals(DepartmentView.VIEW_NAME))
+		{
+			if(!user.getRole().isRole(Role.admin)){
+				return false;
+			}
+		}
+		
 		return true;
 	}
 

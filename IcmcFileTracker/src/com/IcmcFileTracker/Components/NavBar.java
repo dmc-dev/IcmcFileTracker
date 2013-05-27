@@ -58,13 +58,15 @@ public class NavBar extends CustomComponent{
 		navigator.addView(user.getUserName(), new MyView(user));
 		
 	
-		MenuItem admin = navBar.addItem("Admin", null, null);
+		if(user.getRole().isRole(Role.admin)){
+			
+			MenuItem admin = navBar.addItem("Admin", null, null);
 		
-		MenuItem create = admin.addItem(DepartmentView.VIEW_NAME, null, command);
-		navigator.addView(DepartmentView.VIEW_NAME, new DepartmentView());
-		
-		//navBar.setSizeFull();
-		navBar.setSizeUndefined();
+			MenuItem create = admin.addItem(DepartmentView.VIEW_NAME, null, command);
+			navigator.addView(DepartmentView.VIEW_NAME, new DepartmentView());
+		}
+		navBar.setSizeFull();
+		//navBar.setSizeUndefined();
 		layout.addComponent(navBar);
 	}
 }
