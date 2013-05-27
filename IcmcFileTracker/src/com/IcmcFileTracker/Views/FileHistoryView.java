@@ -64,6 +64,8 @@ public class FileHistoryView extends CustomComponent implements View, ClickListe
 		mainLayout.setMargin(true);
 		mainLayout.setSpacing(true);
 		
+		mainLayout.addComponent(new Label(this.VIEW_NAME));
+		
 		// top-level component properties
 		setWidth("100.0%");
 		setHeight("-1px");
