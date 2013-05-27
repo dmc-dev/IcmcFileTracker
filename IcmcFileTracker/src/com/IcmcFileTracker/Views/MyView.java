@@ -39,6 +39,8 @@ public class MyView extends CustomComponent implements View{
 	private final User user;
 	
 	public MyView(User user) {
+		this.user=user;
+		
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
@@ -47,8 +49,6 @@ public class MyView extends CustomComponent implements View{
 		
 		all.setCaption(user.getUserName()+" All Commit");
 		all.setVisibleColumns(Tracer.getVisableColumesNoUser());
-		
-		this.user=user;
 	}
 
 	@Override
