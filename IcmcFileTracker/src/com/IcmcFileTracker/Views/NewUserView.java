@@ -187,8 +187,8 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		
 		user = (User) event.getProperty().getValue();
 		if(user!=null){
-			this.userName.setEnabled(false);
 			userName.setValue(user.getUserName());
+			userName.setEnabled(false);	
 			password.setValue(user.getPassword());
 			//userName.setprova
 		}
