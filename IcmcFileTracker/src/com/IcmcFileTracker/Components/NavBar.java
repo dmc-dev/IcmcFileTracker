@@ -2,7 +2,7 @@ package com.IcmcFileTracker.Components;
 
 import com.IcmcFileTracker.IcmcFileTrackerUI;
 import com.IcmcFileTracker.Forms.GenericForm;
-import com.IcmcFileTracker.Views.CreateTracker;
+import com.IcmcFileTracker.Views.CreateTrackerView;
 import com.IcmcFileTracker.Views.DepartmentView;
 import com.IcmcFileTracker.Views.FileHistoryView;
 import com.IcmcFileTracker.Views.HomeView;
@@ -48,8 +48,8 @@ public class NavBar extends CustomComponent{
 		MenuItem home = navBar.addItem(HomeView.VIEW_NAME, null, command);
 		navigator.addView(HomeView.VIEW_NAME, new HomeView());
 	
-		MenuItem track = navBar.addItem(CreateTracker.VIEW_NAME, null, command);
-		navigator.addView(CreateTracker.VIEW_NAME, new CreateTracker(user));
+		MenuItem track = navBar.addItem(CreateTrackerView.VIEW_NAME, null, command);
+		navigator.addView(CreateTrackerView.VIEW_NAME, new CreateTrackerView(user));
 		
 		MenuItem fileView = navBar.addItem(FileHistoryView.VIEW_NAME, null, command);
 		navigator.addView(FileHistoryView.VIEW_NAME, new FileHistoryView());
