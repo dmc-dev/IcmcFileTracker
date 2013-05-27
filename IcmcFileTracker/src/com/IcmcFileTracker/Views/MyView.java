@@ -83,14 +83,14 @@ public class MyView extends CustomComponent implements View{
 		
 		// table_1
 		owned = new TracerTable();
-		owned.setWidth("-1px");
-		owned.setHeight("-1px");
+		//owned.setWidth("-1px");
+		//owned.setHeight("-1px");
 		verticalSplitPanel_2.addComponent(owned);
 		
 		// table_2
 		all = new TracerTable();
-		all.setWidth("-1px");
-		all.setHeight("-1px");
+		//all.setWidth("-1px");
+		//all.setHeight("-1px");
 		verticalSplitPanel_2.addComponent(all);
 		
 		return verticalSplitPanel_2;
