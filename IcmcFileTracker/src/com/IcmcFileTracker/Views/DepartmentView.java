@@ -118,8 +118,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		Department d = new Department();
 		beans.addItem(d);
 		table.select(d);
-        
-     
+             
         //form.setDataSource(d);
 	}
 

@@ -18,7 +18,7 @@ public class TracerTable extends Table {
 		setColumnCollapsingAllowed(true);
 		setColumnReorderingAllowed(true);
 		setVisibleColumns(Tracer.getVisableColumes());
-		
+		setSelectable(true);
 	} 
 	
 	public void replaceAllItems(List list){
