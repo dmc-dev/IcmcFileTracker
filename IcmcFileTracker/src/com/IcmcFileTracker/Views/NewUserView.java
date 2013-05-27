@@ -176,8 +176,8 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	@Override
 	public void buttonClick(ClickEvent event) {
 		// TODO Auto-generated method stub
-		//user.setPassword(password.getValue());
-		user.setPassword("abc");
+		user.setPassword(password.getValue());
+		//user.setPassword("abc");
 		user.persist();
 	}
 

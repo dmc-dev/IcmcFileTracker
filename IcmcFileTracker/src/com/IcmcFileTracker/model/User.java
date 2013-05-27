@@ -77,7 +77,7 @@ public class User implements Serializable{
 	    if(!et.isActive()){
 	    	et.begin();
 	    }
-	    em.persist(this);
+	    //em.persist(this);
 	    et.commit();
 	}
 	
