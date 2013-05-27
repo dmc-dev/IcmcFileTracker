@@ -125,7 +125,8 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// userName
 		userName = new TextField();
 		userName.setCaption("UserName");
-		userName.setImmediate(false);
+		userName.setImmediate(true);
+		userName.setBuffered(false);
 		userName.setWidth("-1px");
 		userName.setHeight("-1px");
 		//userName.set›nvalidAllowed(false);
