@@ -106,6 +106,7 @@ public class MyView extends CustomComponent implements View{
 		//verticalSplitPanel_2.addComponent(all);
 		
 		VerticalLayout rhs = new VerticalLayout();
+		rhs.setMargin(true);
 		rhs.addComponent(new Label("All Tracker Hystory by "+user.getUserName()));
 		rhs.addComponent(all);
 		verticalSplitPanel_2.addComponent(rhs);
