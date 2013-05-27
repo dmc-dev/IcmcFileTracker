@@ -44,10 +44,10 @@ public class MyView extends CustomComponent implements View{
 		buildMainLayout();
 		setCompositionRoot(mainLayout);
 
-		owned.setCaption(user.getUserName()+" Has Last Commit");
+		//owned.setCaption(user.getUserName()+" Has Last Commit");
 		owned.setVisibleColumns(Tracer.getVisableColumesNoUser());
 		
-		all.setCaption(user.getUserName()+" All Commit");
+		//all.setCaption(user.getUserName()+" All Commit");
 		all.setVisibleColumns(Tracer.getVisableColumesNoUser());
 	}
 
@@ -87,13 +87,13 @@ public class MyView extends CustomComponent implements View{
 		verticalSplitPanel_2.setHeight("100.0%");
 		
 		// table_1
-		owned = new TracerTable();
+		owned = new TracerTable(user.getUserName()+" Has Last Commit");
 		//owned.setWidth("-1px");
 		//owned.setHeight("-1px");
 		verticalSplitPanel_2.addComponent(owned);
 		
 		// table_2
-		all = new TracerTable();
+		all = new TracerTable(user.getUserName()+" All Commit");
 		//all.setWidth("-1px");
 		//all.setHeight("-1px");
 		verticalSplitPanel_2.addComponent(all);

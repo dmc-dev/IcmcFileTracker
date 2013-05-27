@@ -13,13 +13,21 @@ public class TracerTable extends Table {
 	private BeanItemContainer<Tracer> beans = new BeanItemContainer<Tracer>(Tracer.class);
 	
 	public TracerTable(){
-		
 		setContainerDataSource(beans);
 		setColumnCollapsingAllowed(true);
 		setColumnReorderingAllowed(true);
 		setVisibleColumns(Tracer.getVisableColumes());
 		setSelectable(true);
 	} 
+	
+	public TracerTable(String caption){
+		super(caption);
+		setContainerDataSource(beans);
+		setColumnCollapsingAllowed(true);
+		setColumnReorderingAllowed(true);
+		setVisibleColumns(Tracer.getVisableColumes());
+		setSelectable(true);
+	}
 	
 	public void replaceAllItems(List list){
 		removeAllItems();
