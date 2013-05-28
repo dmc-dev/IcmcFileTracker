@@ -54,7 +54,6 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 	private VerticalLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new VerticalLayout();
-		//mainLayout.set›mmediate(false);
 		mainLayout.setWidth("100%");
 		mainLayout.setHeight("100%");
 		mainLayout.setMargin(true);
@@ -72,10 +71,8 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 		// table
 		table = new TracerTable();
 		table.setCaption("Recent Tracker History");
-		//table.set›mmediate(false);
-		table.setWidth("-1px");
-		table.setHeight("-1px");
-		//table.set›nvalidAllowed(false);
+		table.setWidth("100.0%");
+		table.setHeight("100.0%");
 		mainLayout.addComponent(table);
 		
 		return mainLayout;
