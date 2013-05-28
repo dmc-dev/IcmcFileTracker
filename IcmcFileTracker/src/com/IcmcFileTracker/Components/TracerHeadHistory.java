@@ -29,7 +29,7 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 	
 	private Label last = new Label("Last");
 	
-	private NativeSelect number;
+	private NativeSelect number = new NativeSelect();
 	
 	
 	public static final String VIEW_NAME ="TracerHeadHistory";
