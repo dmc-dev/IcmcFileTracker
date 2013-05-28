@@ -224,7 +224,6 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 
 	@Override
 	public void valueChange(ValueChangeEvent event) {
-		// TODO Auto-generated method stub
 		
 		user = (User) event.getProperty().getValue();
 		
@@ -236,9 +235,13 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 			userName.setVisible(false);
 			active.setValue(user.isActive());
 			password.setValue(user.getPassword());
-			role.select(user.getRole());
-		}else{
-			//userData.setVisible(false);
+			
+			for(Object r : role.getItemIds()){
+				if(r.equals(user.getRole())){
+					role.select(r);
+				}
+			}
+				
 		}
 	}
 
