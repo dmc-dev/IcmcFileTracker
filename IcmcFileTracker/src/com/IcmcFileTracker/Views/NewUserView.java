@@ -205,6 +205,8 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 			userName.setValue("");
 			password.setValue("");
 			
+			table.select(null);
+			
 			return;
 		}
 		
