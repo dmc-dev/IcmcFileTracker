@@ -1,6 +1,7 @@
 package com.IcmcFileTracker.Views;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 import com.IcmcFileTracker.helpers.EMF;
 import com.IcmcFileTracker.model.Role;
@@ -178,10 +179,15 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	public void buttonClick(ClickEvent event) {
 		// TODO Auto-generated method stub
 		user.setPassword(password.getValue());
-		//user.setPassword("abc");
 		
-		EntityManager em = EMF.getEntityManager();  
-		em.flush();
+		EntityManager em = EMF.getEntityManager();
+	    EntityTransaction et = em.getTransaction();
+	    if(!et.isActive()){
+	    	et.begin();
+	    }
+	    em.merge(user);
+	    et.commit();
+	    
 	}
 
 	@Override
