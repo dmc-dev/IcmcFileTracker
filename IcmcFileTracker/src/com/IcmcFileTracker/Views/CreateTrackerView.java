@@ -109,8 +109,7 @@ public class CreateTrackerView extends CustomComponent implements View{
 					}
 					head.setTrace(trace);
 					head.persist();
-					
-					
+				
 					table.addItemAt(0, trace);
 				}
 				
@@ -175,6 +174,7 @@ public class CreateTrackerView extends CustomComponent implements View{
 		table.setCaption("Check Out History ");
 		table.setWidth("75.0%");
 		table.setHeight("100.0%");
+		table.setVisibleColumns(Tracer.getVisableColumesNoUser());
 		mainLayout.addComponent(table);
 		
 		return mainLayout;
