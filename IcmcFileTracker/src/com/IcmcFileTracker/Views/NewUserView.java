@@ -186,6 +186,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// TODO Auto-generated method stub
 		
 		user = (User) event.getProperty().getValue();
+		
 		if(user!=null){
 			userName.setValue(user.getUserName());
 			userName.setEnabled(false);	
@@ -194,7 +195,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 			
 			//userName.setprova
 		}
-		
+		table_1.select(user);
 	}
 
 }
