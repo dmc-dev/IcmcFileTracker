@@ -124,8 +124,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 				beans.removeItem(department);
 				beans.addItemAt(idx, department);
 			}catch(Exception e){
-				form.setDataSource(department);
-				form.addComponent(save);
+				form.setVisible(false);
 			}
 			return;
 		}
