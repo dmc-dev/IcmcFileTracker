@@ -65,9 +65,10 @@ public class TracerHead extends Tracer{
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getLatest(){
+	public static List<Tracer> getLatest(int n){
 	    EntityManager em = EMF.getEntityManager();
 	    Query q = em.createQuery("SELECT t FROM TracerHead t ORDER BY t.date DESC", TracerHead.class);
+	    q.setMaxResults(n);
 	    return q.getResultList();
 	}
 	
