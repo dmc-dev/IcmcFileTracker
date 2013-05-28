@@ -79,7 +79,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	private HorizontalLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new HorizontalLayout();
-		mainLayout.setImmediate(true);
+		//mainLayout.setImmediate(true);
 		mainLayout.setWidth("-1px");
 		mainLayout.setHeight("100%");
 		mainLayout.setMargin(true);
@@ -91,7 +91,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// table_1
 		table_1 = new Table();
 		table_1.setCaption("All Users");
-		table_1.setImmediate(false);
+		//table_1.setImmediate(false);
 		table_1.setWidth("-1px");
 		table_1.setHeight("-1px");
 		//table_1.set›nvalidAllowed(false);
@@ -108,7 +108,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	private VerticalLayout buildVerticalLayout_2() {
 		// common part: create layout
 		verticalLayout_2 = new VerticalLayout();
-		verticalLayout_2.setImmediate(true);
+		//verticalLayout_2.setImmediate(true);
 		verticalLayout_2.setWidth("-1px");
 		verticalLayout_2.setHeight("-1px");
 		verticalLayout_2.setMargin(true);
@@ -116,7 +116,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		
 		// label_1
 		label_1 = new Label();
-		label_1.setImmediate(false);
+		//label_1.setImmediate(false);
 		label_1.setWidth("-1px");
 		label_1.setHeight("-1px");
 		label_1.setValue("New User");
@@ -125,8 +125,8 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// userName
 		userName = new TextField();
 		userName.setCaption("UserName");
-		userName.setImmediate(true);
-		userName.setBuffered(false);
+		//userName.setImmediate(true);
+		//userName.setBuffered(false);
 		userName.setWidth("-1px");
 		userName.setHeight("-1px");
 		//userName.set›nvalidAllowed(false);
@@ -135,8 +135,8 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// password
 		password = new TextField();
 		password.setCaption("Password");
-		password.setImmediate(true);
-		password.setBuffered(false);
+		//password.setImmediate(true);
+		//password.setBuffered(false);
 		password.setWidth("-1px");
 		password.setHeight("-1px");
 		//password.set›nvalidAllowed(false);
@@ -145,7 +145,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// role
 		role = new ComboBox();
 		role.setCaption("Role");
-		role.setImmediate(false);
+		//role.setImmediate(false);
 		role.setWidth("-1px");
 		role.setHeight("-1px");
 		//role.set›nvalidAllowed(false);
@@ -154,7 +154,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// save
 		save = new Button();
 		save.setCaption("Save");
-		save.setImmediate(false);
+		//save.setImmediate(false);
 		save.setWidth("-1px");
 		save.setHeight("-1px");
 		//save.set›nvalidAllowed(false);
