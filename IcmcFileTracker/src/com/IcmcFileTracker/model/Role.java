@@ -53,7 +53,9 @@ public class Role implements Serializable{
 	}
 	
 	public boolean equals(Object obj){
-		return name.equals(((Role)obj).getName());
+		if(obj==null)
+			return false;
+		return name.equals( ((Role)obj).getName() );
 	}
 	
 	public void persist(){
