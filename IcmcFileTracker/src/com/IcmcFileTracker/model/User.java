@@ -81,6 +81,16 @@ public class User implements Serializable{
 	    et.commit();
 	}
 	
+	public void merge(){
+		EntityManager em = EMF.getEntityManager();
+	    EntityTransaction et = em.getTransaction();
+	    if(!et.isActive()){
+	    	et.begin();
+	    }
+	    em.merge(this);
+	    et.commit();
+	}
+	
 	public static User find(String userName){
 		EntityManager em = EMF.getEntityManager();
 	    return em.find(User.class, userName);

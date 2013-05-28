@@ -177,17 +177,14 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 
 	@Override
 	public void buttonClick(ClickEvent event) {
-		// TODO Auto-generated method stub
+		
 		user.setPassword(password.getValue());
 		
-		EntityManager em = EMF.getEntityManager();
-	    EntityTransaction et = em.getTransaction();
-	    if(!et.isActive()){
-	    	et.begin();
-	    }
-	    em.merge(user);
-	    et.commit();
+		user.merge();
 	    
+	    int idx = beans.indexOfId(user);
+	    beans.removeItem(user);
+	    beans.addItemAt(idx, user);
 	}
 
 	@Override
