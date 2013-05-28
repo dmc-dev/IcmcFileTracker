@@ -238,7 +238,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 			password.setValue(user.getPassword());
 			role.select(user.getRole());
 		}else{
-			userData.setVisible(false);
+			//userData.setVisible(false);
 		}
 	}
 
