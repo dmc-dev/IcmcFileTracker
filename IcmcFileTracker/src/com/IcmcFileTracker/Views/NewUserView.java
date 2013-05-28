@@ -218,8 +218,12 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		user.merge();
 	    
 	    int idx = beans.indexOfId(user);
-	    beans.removeItem(user);
-	    beans.addItemAt(idx, user);
+	    if(idx==-1){
+	    	beans.addItem(user);
+	    }else{
+	    	beans.removeItem(user);
+	    	beans.addItemAt(idx, user);
+	    }
 	}
 
 	@Override

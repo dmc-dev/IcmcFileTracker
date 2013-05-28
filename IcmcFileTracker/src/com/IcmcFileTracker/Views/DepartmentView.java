@@ -121,8 +121,12 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 			try{
 				department.merge();
 				int idx = beans.indexOfId(department);
-				beans.removeItem(department);
-				beans.addItemAt(idx, department);
+				if(idx==-1){
+				    beans.addItem(department);
+				}else{
+					beans.removeItem(department);
+					beans.addItemAt(idx, department);
+				}
 			}catch(Exception e){
 				form.setVisible(false);
 			}
