@@ -39,11 +39,15 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 
 	final Button newBean = new Button("New Department");
 	
+	final Button save = new Button("save");
+	
 	GenericForm form = new GenericForm<Department>(new Department());
 	
 	BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
 	
 	public static final String VIEW_NAME = "DepartmentView";
+	
+	private Department department=null;
 	
 	public DepartmentView() {
 		
@@ -61,7 +65,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	    
 	  
 	    newBean.addClickListener(this);
-	    
+	    save.addClickListener(this);
 	    
 	    mainLayout.addComponent(form);
 	}
@@ -102,20 +106,26 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	@Override
 	public void valueChange(ValueChangeEvent event) {
 		
-		Department d = (Department) event.getProperty().getValue();
-		if(d!=null){
+		department = (Department) event.getProperty().getValue();
+		if(department!=null){
 			form.setVisible(true);
-			form.setDataSource(d);
+			form.setDataSource(department);
+			form.addComponent(save);
 		}
 	}
 
 	@Override
 	public void buttonClick(ClickEvent event) {
         
+		if(event.getSource().equals(save)){
+			department.merge();
+			return;
+		}
 		
-		Department d = new Department();
+		department = new Department();
 		form.setVisible(true);     
-        form.setDataSource(d);
+        form.setDataSource(department);
+        form.addComponent(save);
 	}
 
 }

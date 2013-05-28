@@ -44,6 +44,16 @@ public class Department implements Serializable{
 	    et.commit();
 	}
 	
+	public void merge(){
+		EntityManager em = EMF.getEntityManager();
+	    EntityTransaction et = em.getTransaction();
+	    if(!et.isActive()){
+	    	et.begin();
+	    }
+	    em.merge(this);
+	    et.commit();
+	}
+	
 	static Department find(String name){
 		EntityManager em = EMF.getEntityManager();
 		return em.find(Department.class, name);

@@ -5,6 +5,7 @@ import com.IcmcFileTracker.model.Department;
 import com.vaadin.data.fieldgroup.BeanFieldGroup;
 import com.vaadin.data.fieldgroup.FieldGroup;
 import com.vaadin.data.util.BeanItem;
+import com.vaadin.ui.Component;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.FormLayout;
 import com.vaadin.ui.Label;
@@ -42,6 +43,12 @@ public class GenericForm<T> extends CustomComponent {
             layout.addComponent(fieldGroup.buildAndBind(propertyId));
         }
     	
+        
+        
+    }
+    
+    public void addComponent(Component c){
+    	layout.addComponent(c);
     }
     
 }
