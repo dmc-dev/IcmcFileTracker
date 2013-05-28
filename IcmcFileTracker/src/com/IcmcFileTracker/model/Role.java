@@ -53,7 +53,7 @@ public class Role implements Serializable{
 	}
 	
 	public boolean equals(Object obj){
-		return name.equals(((Role)obj).name);
+		return name.equals(((Role)obj).getName());
 	}
 	
 	public void persist(){
