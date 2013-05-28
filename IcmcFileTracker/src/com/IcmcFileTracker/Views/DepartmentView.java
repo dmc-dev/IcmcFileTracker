@@ -118,7 +118,15 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	public void buttonClick(ClickEvent event) {
         
 		if(event.getSource().equals(save)){
-			department.merge();
+			try{
+				department.merge();
+				int idx = beans.indexOfId(department);
+				beans.removeItem(department);
+				beans.addItemAt(idx, department);
+			}catch(Exception e){
+				form.setDataSource(department);
+				form.addComponent(save);
+			}
 			return;
 		}
 		
