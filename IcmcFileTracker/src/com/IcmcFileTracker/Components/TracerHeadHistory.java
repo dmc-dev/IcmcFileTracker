@@ -47,6 +47,7 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 		number.addItem(new Integer(500));
 		number.select(selected);
 		number.setNullSelectionAllowed(false);
+		number.setImmediate(true);
 		number.addListener(this);
 	}
 
