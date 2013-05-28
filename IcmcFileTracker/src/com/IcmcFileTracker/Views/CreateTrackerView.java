@@ -222,8 +222,8 @@ public class CreateTrackerView extends CustomComponent implements View{
 		department = new ComboBox();
 		department.setCaption("Department");
 		//department.set›mmediate(false);
-		department.setWidth("120px");
-		department.setHeight("40px");
+		//department.setWidth("120px");
+		//department.setHeight("40px");
 		//department.set›nvalidAllowed(false);
 		horizontalLayout_1.addComponent(department);
 		
