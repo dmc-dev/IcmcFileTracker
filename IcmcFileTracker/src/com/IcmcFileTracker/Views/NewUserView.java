@@ -57,7 +57,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	 * visual editor.
 	 */
 	
-	public static final String VIEW_NAME = "CreateUser";
+	public static final String VIEW_NAME = "User Admin";
 	
 	BeanItemContainer<User> beans = new BeanItemContainer<User>(User.class);
 	

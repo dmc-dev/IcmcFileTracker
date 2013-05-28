@@ -45,7 +45,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	
 	BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
 	
-	public static final String VIEW_NAME = "DepartmentView";
+	public static final String VIEW_NAME = "Department Admin";
 	
 	private Department department=null;
 	

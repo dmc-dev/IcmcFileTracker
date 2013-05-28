@@ -171,7 +171,7 @@ public class CreateTrackerView extends CustomComponent implements View{
 		
 		// table
 		table = new TracerTable();
-		table.setCaption("Check Out History ");
+		table.setCaption("Session History");
 		table.setWidth("75.0%");
 		table.setHeight("100.0%");
 		table.setVisibleColumns(Tracer.getVisableColumesNoUser());
