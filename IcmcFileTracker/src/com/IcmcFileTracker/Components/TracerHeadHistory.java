@@ -45,6 +45,8 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 		number.addItem(new Integer(75));
 		number.addItem(new Integer(250));
 		number.addItem(new Integer(500));
+		number.select(selected);
+		number.setNullSelectionAllowed(false);
 		number.addListener(this);
 	}
 
@@ -58,6 +60,8 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 		mainLayout.setMargin(true);
 		
 		mainLayout.addComponent(horizontalLayout);
+		horizontalLayout.setMargin(true);
+		horizontalLayout.setSpacing(true);
 		horizontalLayout.addComponent(last);
 		horizontalLayout.addComponent(number);
 		
