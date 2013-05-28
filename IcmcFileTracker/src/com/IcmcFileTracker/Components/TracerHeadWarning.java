@@ -70,10 +70,13 @@ public class TracerHeadWarning extends CustomComponent implements View, Listener
 		department.setNullSelectionAllowed(false);
 		state.setNullSelectionAllowed(false);
 		
-		Object selected = new Integer(1);
+		Object selected = new Integer(7);
 		days.addItem(selected) ;
-		days.addItem(new Integer(2));
-		days.addItem(new Integer(3));
+		days.addItem(new Integer(14));
+		days.addItem(new Integer(28));
+		days.addItem(new Integer(56));
+		days.addItem(new Integer(90));
+		
 		days.select(selected);
 		
 		days.addListener(this);
