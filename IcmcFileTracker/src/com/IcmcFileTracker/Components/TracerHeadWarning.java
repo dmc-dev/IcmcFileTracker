@@ -134,8 +134,8 @@ public class TracerHeadWarning extends CustomComponent implements View, Listener
 		mainLayout.setSpacing(true);
 		
 		// top-level component properties
-		setWidth("-1px");
-		setHeight("-1px");
+		setWidth("100.0%");
+		setHeight("100.0%");
 		
 		// horizontalLayout_1
 		horizontalLayout_1 = buildHorizontalLayout_1();
