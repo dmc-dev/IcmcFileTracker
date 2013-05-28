@@ -52,6 +52,10 @@ public class Role implements Serializable{
 		return name.equals(role);
 	}
 	
+	public boolean equals(Object obj){
+		return this.name.equals(obj);
+	}
+	
 	public void persist(){
 	    EntityManager em = EMF.getEntityManager();
 	    EntityTransaction et = em.getTransaction();
@@ -70,5 +74,6 @@ public class Role implements Serializable{
 	public static Role find(String name){
 		EntityManager em = EMF.getEntityManager();
 		return em.find(Role.class, name);
+		
 	}
 }
