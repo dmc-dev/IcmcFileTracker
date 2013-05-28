@@ -73,7 +73,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 			role.addItem(r);
 			last=r;
 		}
-		role.select(last);
+		//role.select(last);
 		role.setNullSelectionAllowed(false);
 		
 		table.setContainerDataSource(beans);
