@@ -91,10 +91,9 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		// table_1
 		table_1 = new Table();
 		table_1.setCaption("All Users");
-		//table_1.setImmediate(false);
+		table_1.setImmediate(true);
 		table_1.setWidth("-1px");
 		table_1.setHeight("-1px");
-		//table_1.set›nvalidAllowed(false);
 		mainLayout.addComponent(table_1);
 		
 		// verticalLayout_2
@@ -116,7 +115,6 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		
 		// label_1
 		label_1 = new Label();
-		label_1.setImmediate(true);
 		label_1.setWidth("-1px");
 		label_1.setHeight("-1px");
 		label_1.setValue("New User");
@@ -190,10 +188,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		if(user!=null){
 			userName.setValue(user.getUserName());
 			userName.setEnabled(false);	
-			password.setValue(user.getPassword());
-			password.markAsDirty();
-			
-			//userName.setprova
+			password.setValue(user.getPassword());	
 		}
 		table_1.select(user);
 	}
