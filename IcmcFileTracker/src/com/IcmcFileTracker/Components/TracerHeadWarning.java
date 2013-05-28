@@ -67,8 +67,9 @@ public class TracerHeadWarning extends CustomComponent implements View, Listener
 		days.addItem(selected) ;
 		days.addItem(new Integer(14));
 		days.addItem(new Integer(28));
-		days.addItem(new Integer(56));
 		days.addItem(new Integer(90));
+		days.addItem(new Integer(180));
+		days.addItem(new Integer(365));
 		
 		days.select(selected);
 		
