@@ -79,7 +79,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	private HorizontalLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new HorizontalLayout();
-		mainLayout.setImmediate(false);
+		mainLayout.setImmediate(true);
 		mainLayout.setWidth("-1px");
 		mainLayout.setHeight("100%");
 		mainLayout.setMargin(true);
@@ -108,7 +108,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 	private VerticalLayout buildVerticalLayout_2() {
 		// common part: create layout
 		verticalLayout_2 = new VerticalLayout();
-		verticalLayout_2.setImmediate(false);
+		verticalLayout_2.setImmediate(true);
 		verticalLayout_2.setWidth("-1px");
 		verticalLayout_2.setHeight("-1px");
 		verticalLayout_2.setMargin(true);
