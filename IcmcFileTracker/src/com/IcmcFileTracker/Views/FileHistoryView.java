@@ -76,8 +76,8 @@ public class FileHistoryView extends CustomComponent implements View, ClickListe
 		
 		// table_1
 		table = new TracerTable();
-		table.setWidth("-1px");
-		table.setHeight("-1px");
+		table.setWidth("75.0%");
+		table.setHeight("100.0%");
 		mainLayout.addComponent(table);
 		
 		return mainLayout;
