@@ -116,7 +116,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		
 		// label_1
 		label_1 = new Label();
-		//label_1.setImmediate(false);
+		label_1.setImmediate(true);
 		label_1.setWidth("-1px");
 		label_1.setHeight("-1px");
 		label_1.setValue("New User");
