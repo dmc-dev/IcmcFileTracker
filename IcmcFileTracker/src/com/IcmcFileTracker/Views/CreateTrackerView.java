@@ -1,6 +1,7 @@
 package com.IcmcFileTracker.Views;
 
 import java.util.Calendar;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 
@@ -108,11 +109,14 @@ public class CreateTrackerView extends CustomComponent implements View{
 						head.setFileid(fileid);
 					}
 					head.setTrace(trace);
-					head.persist();
-				
-					table.addItemAt(0, trace);
+					try{
+						head.persist();
+						table.addItemAt(0, trace);
+					}catch(Exception e){
+						Notification.show("Error saving Tracker "+fileid, Notification.Type.ERROR_MESSAGE);
+						log.log(Level.WARNING, e.getMessage());
+					}
 				}
-				
 				enableUI(true);
 			}
 			
