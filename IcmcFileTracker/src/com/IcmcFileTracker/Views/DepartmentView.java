@@ -134,6 +134,7 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		}
 		
 		department = new Department();
+		department.setName("");
 		form.setVisible(true);     
         form.setDataSource(department);
         form.addComponent(save);
