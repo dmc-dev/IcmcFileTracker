@@ -90,20 +90,21 @@ public class MyView extends CustomComponent implements View{
 		
 		// table_1
 		owned = new TracerTable();
-		//owned.setWidth("-1px");
-		//owned.setHeight("-1px");
-		//verticalSplitPanel_2.addComponent(owned);
+		owned.setWidth("100.0%");
+		owned.setHeight("100.0%");
+		
 		
 		VerticalLayout lhs = new VerticalLayout();
+		lhs.setMargin(true);
 		lhs.addComponent(new Label("Trackers Owned by "+user.getUserName()));
 		lhs.addComponent(owned);
 		verticalSplitPanel_2.addComponent(lhs);
 		
 		// table_2
 		all = new TracerTable();
-		//all.setWidth("-1px");
-		//all.setHeight("-1px");
-		//verticalSplitPanel_2.addComponent(all);
+		all.setWidth("100.0%");
+		all.setHeight("100.0%");
+		
 		
 		VerticalLayout rhs = new VerticalLayout();
 		rhs.setMargin(true);
