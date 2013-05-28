@@ -100,7 +100,7 @@ public class NewUserView extends CustomComponent implements View, ClickListener,
 		
 		// table_1
 		table = new Table();
-		table.setCaption("All Users");
+		table.setCaption(VIEW_NAME);
 		table.setImmediate(true);
 		table.setWidth("-1px");
 		table.setHeight("-1px");

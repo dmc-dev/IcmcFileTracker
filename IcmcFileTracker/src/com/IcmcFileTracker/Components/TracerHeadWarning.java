@@ -127,7 +127,6 @@ public class TracerHeadWarning extends CustomComponent implements View, Listener
 	private VerticalLayout buildMainLayout() {
 		// common part: create layout
 		mainLayout = new VerticalLayout();
-		//mainLayout.set›mmediate(false);
 		mainLayout.setWidth("100.0%");
 		mainLayout.setHeight("100.0%");
 		mainLayout.setMargin(true);
@@ -154,66 +153,42 @@ public class TracerHeadWarning extends CustomComponent implements View, Listener
 	private HorizontalLayout buildHorizontalLayout_1() {
 		// common part: create layout
 		horizontalLayout_1 = new HorizontalLayout();
-		//horizontalLayout_1.set›mmediate(false);
-		//horizontalLayout_1.setWidth("-1px");
-		//horizontalLayout_1.setHeight("-1px");
 		horizontalLayout_1.setMargin(true);
 		horizontalLayout_1.setSpacing(true);
 		
 		// label_1
 		label_1 = new Label();
-		//label_1.set›mmediate(false);
-		//label_1.setWidth("-1px");
-		//label_1.setHeight("-1px");
 		label_1.setValue("Files Checked");
 		horizontalLayout_1.addComponent(label_1);
 		
 		// state
 		state = new NativeSelect();
 		state.setImmediate(true);
-		//state.setWidth("-1px");
-		//state.setHeight("-1px");
-		//state.set›nvalidAllowed(false);
 		horizontalLayout_1.addComponent(state);
 		
 		// toFromLabel
 		toFromLabel = new Label();
-		//toFromLabel.set›mmediate(false);
-		//toFromLabel.setWidth("-1px");
-		//toFromLabel.setHeight("-1px");
 		toFromLabel.setValue("to Department");
 		horizontalLayout_1.addComponent(toFromLabel);
 		
 		// department
 		department = new NativeSelect();
 		department.setImmediate(true);
-		//department.setWidth("-1px");
-		//department.setHeight("-1px");
-		//department.set›nvalidAllowed(false);
 		horizontalLayout_1.addComponent(department);
 		
 		// label_3
 		label_3 = new Label();
-		//label_3.set›mmediate(false);
-		//label_3.setWidth("-1px");
-		//label_3.setHeight("-1px");
 		label_3.setValue("for more than");
 		horizontalLayout_1.addComponent(label_3);
 		
 		// days
 		days = new NativeSelect();
 		days.setImmediate(true);
-		//days.setWidth("-1px");
-		//days.setHeight("-1px");
-		//days.set›nvalidAllowed(false);
 		horizontalLayout_1.addComponent(days);
 		horizontalLayout_1.setComponentAlignment(days, new Alignment(9));
 		
 		// label_2
 		label_2 = new Label();
-		//label_2.set›mmediate(false);
-		//label_2.setWidth("-1px");
-		//label_2.setHeight("-1px");
 		label_2.setValue("Days");
 		horizontalLayout_1.addComponent(label_2);
 		
