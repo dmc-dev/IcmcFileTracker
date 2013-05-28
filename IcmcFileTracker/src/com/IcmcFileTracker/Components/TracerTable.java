@@ -35,4 +35,8 @@ public class TracerTable extends Table {
 			addItem(o);
 		}
 	}
+	
+	public void addItemAt(int index, Object o){
+		beans.addItemAt(index, o);
+	}
 }
