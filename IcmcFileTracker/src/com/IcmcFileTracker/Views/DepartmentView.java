@@ -20,8 +20,10 @@ import com.vaadin.ui.Button.ClickListener;
 import com.vaadin.ui.CheckBox;
 import com.vaadin.ui.CustomComponent;
 import com.vaadin.ui.HorizontalLayout;
+import com.vaadin.ui.Label;
 import com.vaadin.ui.Notification;
 import com.vaadin.ui.Table;
+import com.vaadin.ui.TextField;
 import com.vaadin.ui.VerticalLayout;
 
 public class DepartmentView extends CustomComponent implements View, ClickListener, ValueChangeListener{
@@ -39,11 +41,19 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 
 	final Button newBean = new Button("New Department");
 	
+	
 	VerticalLayout form = new VerticalLayout();
 	
-	final Button save = new Button("save");
+	private Label title = new Label();
 	
-	BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
+	private CheckBox active = new CheckBox("Active");
+	
+	private TextField name = new TextField();
+	
+	private Button save = new Button("save");
+	
+	
+	private BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
 	
 	public static final String VIEW_NAME = "Department Admin";
 	
@@ -64,12 +74,18 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		table.setImmediate(true);
 	    
 	  
-	    newBean.addClickListener(this);
-	    save.addClickListener(this);
-	    
-
+	    form.setMargin(true);
+	    form.setSpacing(true);
+	    form.addComponent(title);
+	    form.addComponent(active);
+	    form.addComponent(name);
 		form.addComponent(save);
 	    
+		save.addClickListener(this);
+		
+	    newBean.addClickListener(this);
+	    
+	  
 	    mainLayout.addComponent(form);
 	}
 
@@ -112,6 +128,8 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		department = (Department) event.getProperty().getValue();
 		if(department!=null){
 			form.setVisible(true);
+			title.setValue("Edit "+department.getName());
+			name.setVisible(false);
 		}
 	}
 
@@ -136,7 +154,9 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		
 		department = new Department();
 		department.setName("");
-		form.setVisible(true);     
+		form.setVisible(true);
+		title.setValue("Edit Department");
+		name.setVisible(true);
 	}
 
 }
