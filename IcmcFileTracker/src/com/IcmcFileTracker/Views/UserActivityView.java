@@ -54,7 +54,7 @@ public class UserActivityView extends CustomComponent implements View, Listener{
 	@Override
 	public void enter(ViewChangeEvent event) {
 		
-		//users.removeListener(this);
+		users.removeListener(this);
 		users.removeAllItems();
 		
 		User last = null;
@@ -63,10 +63,11 @@ public class UserActivityView extends CustomComponent implements View, Listener{
 			last=u;
 		}
 		
+		users.addListener(this);
 		users.select(last);
 		//myView.setUser(last);
 		
-		//users.addListener(this);
+		
 	}
 
 	@Override
