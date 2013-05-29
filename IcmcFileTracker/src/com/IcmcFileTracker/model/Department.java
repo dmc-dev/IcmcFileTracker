@@ -36,10 +36,10 @@ public class Department implements Serializable{
 		this.name = name;
 	}
 
-	public boolean equals(Object obj){
-		if(obj==null)
+	public boolean same(Department d){
+		if(d==null)
 			return false;
-		return name.equals( ((Department)obj).getName() );
+		return name.equals( d.getName() );
 	}
 	
 	public void persist(){
