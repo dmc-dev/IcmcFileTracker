@@ -38,8 +38,6 @@ public class Tracer implements Serializable{
 	@Basic
 	protected Date date;
 	
-	@Basic
-	protected boolean checkIN;
 
 	@Basic
 	protected String fileid;
@@ -102,17 +100,11 @@ public class Tracer implements Serializable{
 		return date;
 	}
 
-	public void setCheckIN(boolean param) {
-		this.checkIN = param;
-	}
 
-	public boolean isCheckIN() {
-		return checkIN;
-	}
 
 	@Override
 	public String toString() {
-		return id+" "+checkIN+" "+date+" "+user+" "+comment;
+		return id+" "+date+" "+user+" "+comment;
 	}
 	
 	

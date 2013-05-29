@@ -34,7 +34,6 @@ public class TracerHead extends Tracer{
 		department = trace.getDepartment();	   
 		comment = trace.getComment();
 		date = trace.getDate();
-		checkIN= trace.isCheckIN();
 	}
 
 	public void persist(){
