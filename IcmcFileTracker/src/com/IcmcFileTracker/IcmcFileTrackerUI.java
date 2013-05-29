@@ -11,6 +11,7 @@ import com.IcmcFileTracker.Views.NewUserView;
 import com.IcmcFileTracker.helpers.DataInit;
 import com.IcmcFileTracker.model.*;
 
+import com.vaadin.annotations.PreserveOnRefresh;
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
 import com.vaadin.navigator.ViewChangeListener;
@@ -25,6 +26,7 @@ import com.vaadin.ui.VerticalLayout;
 @Theme("reindeer")
 //@Theme("liferay")
 //@Theme("runo")
+@PreserveOnRefresh
 public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginListener{
 
 	private static final long serialVersionUID = 1L;
