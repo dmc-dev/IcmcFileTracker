@@ -128,6 +128,11 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		if(department!=null){
 			form.setVisible(true);
 			title.setValue("Edit "+department.getName());
+			
+			active.setValue(department.isActive());
+			name.setValue(department.getName());
+			
+			name.setEnabled(false);
 			name.setVisible(false);
 		}
 	}
@@ -137,6 +142,10 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
         
 		if(event.getSource().equals(save)){
 			try{
+				
+				department.setActive(active.getValue());
+				department.setName(name.getValue());
+				
 				department.merge();
 				int idx = beans.indexOfId(department);
 				if(idx==-1){
@@ -154,8 +163,9 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		department = new Department();
 		department.setName("");
 		form.setVisible(true);
-		title.setValue("Edit Department");
+		title.setValue("New Department");
 		name.setVisible(true);
+		table.select(null);
 	}
 
 }
