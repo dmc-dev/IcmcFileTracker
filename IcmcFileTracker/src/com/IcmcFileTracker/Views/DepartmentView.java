@@ -39,9 +39,9 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 
 	final Button newBean = new Button("New Department");
 	
-	final Button save = new Button("save");
+	VerticalLayout form = new VerticalLayout();
 	
-	GenericForm form = new GenericForm<Department>(new Department());
+	final Button save = new Button("save");
 	
 	BeanItemContainer<Department> beans = new BeanItemContainer<Department>(Department.class);
 	
@@ -66,6 +66,9 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 	  
 	    newBean.addClickListener(this);
 	    save.addClickListener(this);
+	    
+
+		form.addComponent(save);
 	    
 	    mainLayout.addComponent(form);
 	}
@@ -109,8 +112,6 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		department = (Department) event.getProperty().getValue();
 		if(department!=null){
 			form.setVisible(true);
-			form.setDataSource(department);
-			form.addComponent(save);
 		}
 	}
 
@@ -136,8 +137,6 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		department = new Department();
 		department.setName("");
 		form.setVisible(true);     
-        form.setDataSource(department);
-        form.addComponent(save);
 	}
 
 }
