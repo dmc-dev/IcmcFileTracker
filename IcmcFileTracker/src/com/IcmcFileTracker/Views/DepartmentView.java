@@ -41,14 +41,13 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 
 	final Button newBean = new Button("New Department");
 	
-	
-	VerticalLayout form = new VerticalLayout();
+	private VerticalLayout form = new VerticalLayout();
 	
 	private Label title = new Label();
 	
 	private CheckBox active = new CheckBox("Active");
 	
-	private TextField name = new TextField();
+	private TextField name = new TextField("Name");
 	
 	private Button save = new Button("save");
 	
