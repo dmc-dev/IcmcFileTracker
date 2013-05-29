@@ -100,8 +100,10 @@ public class CreateTrackerView extends CustomComponent implements View{
 				Tracer trace = makeTracerFromUI();
 				trace.setFileid(fileid);
 				
-				if(head!=null && head.isCheckIN() == trace.isCheckIN()){
-					Notification.show("File "+fileid+" all ready checked "+InOutObj.getString(head.isCheckIN()), Notification.Type.WARNING_MESSAGE);
+				
+				
+				if(head!=null && head.getDepartment().equals(trace.getDepartment())  && head.isCheckIN() == trace.isCheckIN()){
+					Notification.show("File "+fileid+" all ready checked "+InOutObj.getString(head.isCheckIN())+" to "+head.getDepartment(), Notification.Type.WARNING_MESSAGE);
 				}
 				else{
 					if(head==null){

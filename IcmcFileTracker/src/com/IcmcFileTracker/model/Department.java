@@ -36,6 +36,12 @@ public class Department implements Serializable{
 		this.name = name;
 	}
 
+	public boolean equals(Object obj){
+		if(obj==null)
+			return false;
+		return name.equals( ((Department)obj).getName() );
+	}
+	
 	public void persist(){
 	    EntityManager em = EMF.getEntityManager();
 	    EntityTransaction et = em.getTransaction();
