@@ -27,7 +27,7 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 	
 	private HorizontalLayout horizontalLayout = new HorizontalLayout();
 	
-	private Label last = new Label("Last");
+	private Label last = new Label("Max Tracker History");
 	
 	private NativeSelect number = new NativeSelect();
 	
