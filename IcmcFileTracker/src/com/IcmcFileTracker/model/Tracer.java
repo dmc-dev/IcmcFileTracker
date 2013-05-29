@@ -43,13 +43,13 @@ public class Tracer implements Serializable{
 	protected String fileid;
 	
 	public static String[] getVisableColumes(){
-		return new String []{"fileid", "checkIN", "department", "date", "user", "comment"};
+		return new String []{"fileid", "department", "date", "user", "comment"};
 	}
 	public static String[] getVisableColumesNoUser(){
-		return new String []{"fileid", "checkIN", "department", "date", "comment"};
+		return new String []{"fileid", "department", "date", "comment"};
 	}
 	public static String[] getVisableColumesNoID(){
-		return new String []{"checkIN", "department", "date", "user", "comment"};
+		return new String []{"department", "date", "user", "comment"};
 	}
 	
 	public String getFileid() {
@@ -142,27 +142,25 @@ public class Tracer implements Serializable{
 
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getOld(boolean state, int days){
+	public static List<Tracer> getOld(int days){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.checkIN = :state AND t.date <= :date ORDER BY t.date DESC", Tracer.class);
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.date <= :date ORDER BY t.date DESC", Tracer.class);
 	   
 	    Calendar c = Calendar.getInstance();
 	    c.add(Calendar.DATE, -days);
 	    q.setParameter("date", c.getTime());
-	    q.setParameter("state", state);
 	    
 		return q.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getOld(boolean state, int days, Department department){
+	public static List<Tracer> getOld(int days, Department department){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.checkIN = :state AND t.department = :department AND t.date <= :date ORDER BY t.date DESC", Tracer.class);
+	    Query q = em.createQuery("SELECT t FROM Tracer t WHERE t.department = :department AND t.date <= :date ORDER BY t.date DESC", Tracer.class);
 	   
 	    Calendar c = Calendar.getInstance();
 	    c.add(Calendar.DATE, -days);
 	    q.setParameter("date", c.getTime());
-	    q.setParameter("state", state);
 	    q.setParameter("department", department);
 	    
 		return q.getResultList();

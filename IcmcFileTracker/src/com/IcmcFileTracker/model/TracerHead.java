@@ -81,27 +81,25 @@ public class TracerHead extends Tracer{
 
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getOld(boolean state, int days){
+	public static List<Tracer> getOld(int days){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.checkIN = :state AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.date <= :date ORDER BY t.date DESC", TracerHead.class);
 	   
 	    Calendar c = Calendar.getInstance();
 	    c.add(Calendar.DATE, -days);
 	    q.setParameter("date", c.getTime());
-	    q.setParameter("state", state);
 	    
 		return q.getResultList();
 	}
 	
 	@SuppressWarnings("unchecked")
-	public static List<Tracer> getOld(boolean state, int days, Department department){
+	public static List<Tracer> getOld(int days, Department department){
 	    EntityManager em = EMF.getEntityManager();
-	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.checkIN = :state AND t.department = :department AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
+	    Query q = em.createQuery("SELECT t FROM TracerHead t WHERE t.department = :department AND t.date <= :date ORDER BY t.date DESC", TracerHead.class);
 	   
 	    Calendar c = Calendar.getInstance();
 	    c.add(Calendar.DATE, -days);
 	    q.setParameter("date", c.getTime());
-	    q.setParameter("state", state);
 	    q.setParameter("department", department);
 	    
 		return q.getResultList();

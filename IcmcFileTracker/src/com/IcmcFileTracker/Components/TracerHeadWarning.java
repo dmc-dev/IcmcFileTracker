@@ -99,9 +99,9 @@ public class TracerHeadWarning extends CustomComponent implements View, Listener
 		List l;
 		
 		if(department.getValue().equals(ALL)){
-			l = TracerHead.getOld(bool, dayInt);
+			l = TracerHead.getOld(dayInt);
 		}else{
-			l = TracerHead.getOld(bool, dayInt, (Department)(department.getValue()));
+			l = TracerHead.getOld(dayInt, (Department)(department.getValue()));
 		}
 		
 		table.setCaption(l.size()+" Trackers older than "+dayInt+" days");
