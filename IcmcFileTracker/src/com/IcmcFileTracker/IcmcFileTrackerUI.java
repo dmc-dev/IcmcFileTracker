@@ -84,7 +84,7 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 		}
 		
 		if(user==null || user.isActive()==false){
-			Notification.show("Un Authorized", Notification.Type.ERROR_MESSAGE);
+			Notification.show("NOT Authorized", Notification.Type.ERROR_MESSAGE);
 			return false;
 		}
 		

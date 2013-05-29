@@ -36,7 +36,11 @@ public class MyView extends CustomComponent implements View{
 	 * visual editor.
 	 */
 	
-	private final User user;
+	private User user;
+	
+	Label title = new Label();
+	Label ownedTitle = new Label();
+	Label allTitle = new Label();
 	
 	public MyView(User user) {
 		this.user=user;
@@ -53,6 +57,10 @@ public class MyView extends CustomComponent implements View{
 
 	@Override
 	public void enter(ViewChangeEvent event) {
+		title.setValue(user.getUserName());
+		ownedTitle.setValue("Trackers Owned by "+user.getUserName());
+		allTitle.setValue("All Tracker Hystory by "+user.getUserName());
+		
 		owned.replaceAllItems(TracerHead.getByUser(user));
 		all.replaceAllItems(Tracer.getByUser(user));
 	}
@@ -66,7 +74,7 @@ public class MyView extends CustomComponent implements View{
 		mainLayout.setMargin(true);
 		mainLayout.setSpacing(true);
 		
-		mainLayout.addComponent(new Label(user.getUserName()) );
+		mainLayout.addComponent(title );
 		
 		// top-level component properties
 		setWidth("100.0%");
@@ -96,7 +104,7 @@ public class MyView extends CustomComponent implements View{
 		
 		VerticalLayout lhs = new VerticalLayout();
 		lhs.setMargin(true);
-		lhs.addComponent(new Label("Trackers Owned by "+user.getUserName()));
+		lhs.addComponent(ownedTitle);
 		lhs.addComponent(owned);
 		verticalSplitPanel_2.addComponent(lhs);
 		
@@ -108,11 +116,15 @@ public class MyView extends CustomComponent implements View{
 		
 		VerticalLayout rhs = new VerticalLayout();
 		rhs.setMargin(true);
-		rhs.addComponent(new Label("All Tracker Hystory by "+user.getUserName()));
+		rhs.addComponent(allTitle);
 		rhs.addComponent(all);
 		verticalSplitPanel_2.addComponent(rhs);
 		
 		return verticalSplitPanel_2;
 	}
 
+	public void setUser(User u){
+		user=u;
+		enter(null);
+	}
 }

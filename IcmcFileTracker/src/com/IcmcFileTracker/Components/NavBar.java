@@ -9,6 +9,7 @@ import com.IcmcFileTracker.Views.FileHistoryView;
 import com.IcmcFileTracker.Views.HomeView;
 import com.IcmcFileTracker.Views.MyView;
 import com.IcmcFileTracker.Views.NewUserView;
+import com.IcmcFileTracker.Views.UserActivityView;
 import com.IcmcFileTracker.model.Department;
 import com.IcmcFileTracker.model.User;
 import com.IcmcFileTracker.model.Role;
@@ -75,6 +76,9 @@ public class NavBar extends CustomComponent{
 			
 			MenuItem newUsers = admin.addItem(NewUserView.VIEW_NAME, null, command);
 			navigator.addView(NewUserView.VIEW_NAME, new NewUserView());
+			
+			MenuItem userActivity = admin.addItem(UserActivityView.VIEW_NAME, null, command);
+			navigator.addView(UserActivityView.VIEW_NAME, new UserActivityView());
 		}
 		
 		logout = navBar.addItem("LogOut", null, command);
