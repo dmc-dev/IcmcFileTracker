@@ -74,6 +74,9 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 	public boolean beforeViewChange(ViewChangeEvent event) {
 	
 		if(event.getViewName().equals(LoginForm.VIEW_NAME)){
+			
+			user=null;
+			
 			if(navBar!=null){
 				layout.removeComponent(navBar);
 			}

@@ -2,6 +2,7 @@ package com.IcmcFileTracker.Components;
 
 import com.IcmcFileTracker.IcmcFileTrackerUI;
 import com.IcmcFileTracker.Forms.GenericForm;
+import com.IcmcFileTracker.Forms.LoginForm;
 import com.IcmcFileTracker.Views.CreateTrackerView;
 import com.IcmcFileTracker.Views.DepartmentView;
 import com.IcmcFileTracker.Views.FileHistoryView;
@@ -29,7 +30,8 @@ public class NavBar extends CustomComponent{
 	private MenuBar navBar = new MenuBar();
 	private User user;
 	private Navigator navigator;
-
+	private MenuItem logout;
+	
 	public NavBar(final Navigator navigator, final User user) {
 		
 		setCompositionRoot(layout);
@@ -41,8 +43,13 @@ public class NavBar extends CustomComponent{
 			private static final long serialVersionUID = 1L;
 
 			public void menuSelected(MenuItem selected) {
-				navigator.navigateTo(selected.getText());
-		    }  
+				
+				if(selected.equals(logout)){
+					navigator.navigateTo(LoginForm.VIEW_NAME);
+				}else{
+					navigator.navigateTo(selected.getText());
+				}
+			}
 		};
 		
 		
@@ -69,6 +76,8 @@ public class NavBar extends CustomComponent{
 			MenuItem newUsers = admin.addItem(NewUserView.VIEW_NAME, null, command);
 			navigator.addView(NewUserView.VIEW_NAME, new NewUserView());
 		}
+		
+		logout = navBar.addItem("LogOut", null, command);
 		
 		navBar.setSizeFull();
 		layout.addComponent(navBar);
