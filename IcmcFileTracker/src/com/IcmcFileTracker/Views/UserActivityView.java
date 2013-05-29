@@ -29,11 +29,14 @@ public class UserActivityView extends CustomComponent implements View, Listener{
 		
 	private ComboBox users = new ComboBox();
 	
-	private MyView myView = new MyView(null);
+	private MyView myView;
 	
+	private User me;
 	
-	public UserActivityView(){
-
+	public UserActivityView(User me){
+		this.me = me;
+		myView = new MyView(me);
+		
 		users.setCaption("All Users");
 		users.setNullSelectionAllowed(false);
 		users.setImmediate(true);

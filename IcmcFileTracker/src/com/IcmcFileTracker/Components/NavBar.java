@@ -78,7 +78,7 @@ public class NavBar extends CustomComponent{
 			navigator.addView(NewUserView.VIEW_NAME, new NewUserView());
 			
 			MenuItem userActivity = admin.addItem(UserActivityView.VIEW_NAME, null, command);
-			navigator.addView(UserActivityView.VIEW_NAME, new UserActivityView());
+			navigator.addView(UserActivityView.VIEW_NAME, new UserActivityView(user));
 		}
 		
 		logout = navBar.addItem("LogOut", null, command);
