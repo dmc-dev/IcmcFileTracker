@@ -166,8 +166,8 @@ public class DepartmentView extends CustomComponent implements View, ClickListen
 		title.setValue("New Department");
 		active.setValue(true);
 		name.setValue("");
-		name.setVisible(true);
 		name.setEnabled(true);
+		name.setVisible(true);
 		table.select(null);
 	}
 
