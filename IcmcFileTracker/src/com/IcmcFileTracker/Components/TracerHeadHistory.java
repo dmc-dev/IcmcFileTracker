@@ -60,7 +60,6 @@ public class TracerHeadHistory extends CustomComponent implements View, Listener
 		mainLayout.setMargin(true);
 		
 		mainLayout.addComponent(horizontalLayout);
-		horizontalLayout.setMargin(true);
 		horizontalLayout.setSpacing(true);
 		horizontalLayout.addComponent(last);
 		horizontalLayout.addComponent(number);
