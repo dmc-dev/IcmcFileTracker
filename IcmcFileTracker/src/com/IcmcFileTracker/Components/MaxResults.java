@@ -29,6 +29,8 @@ public class MaxResults extends CustomComponent{
 		horizontalLayout.setSpacing(true);
 		horizontalLayout.addComponent(last);
 		horizontalLayout.addComponent(number);
+		
+		setCompositionRoot(horizontalLayout);
 	}
 	
 	public void addListener(Listener listener){
