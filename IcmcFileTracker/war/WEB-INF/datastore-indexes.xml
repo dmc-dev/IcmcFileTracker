@@ -2,12 +2,6 @@
 <datastore-indexes autoGenerate="false">
   
 	<datastore-index kind="TracerHead" ancestor="false" source="manual">
-		<property name="checkIN" direction="asc"/>
-		<property name="date" direction="desc"/>
-	</datastore-index>
-    
-	<datastore-index kind="TracerHead" ancestor="false" source="manual">
-        <property name="checkIN" direction="asc"/>
         <property name="department_name" direction="asc"/>
         <property name="date" direction="desc"/>
     </datastore-index>
