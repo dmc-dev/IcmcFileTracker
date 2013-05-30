@@ -77,12 +77,11 @@ public class IcmcFileTrackerUI extends UI implements ViewChangeListener, LoginLi
 		if(event.getViewName().equals(LoginForm.VIEW_NAME)){
 			
 			user=null;
-			navBar=null;
-			/*
+			
 			if(navBar!=null){
 				layout.removeComponent(navBar);
+				navBar=null;
 			}
-			*/
 			return true;
 		}
 		
