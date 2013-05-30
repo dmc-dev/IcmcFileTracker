@@ -1,7 +1,6 @@
 package com.IcmcFileTracker.Components;
 
 import com.IcmcFileTracker.IcmcFileTrackerUI;
-import com.IcmcFileTracker.Forms.GenericForm;
 import com.IcmcFileTracker.Forms.LoginForm;
 import com.IcmcFileTracker.Views.CreateTrackerView;
 import com.IcmcFileTracker.Views.DepartmentView;

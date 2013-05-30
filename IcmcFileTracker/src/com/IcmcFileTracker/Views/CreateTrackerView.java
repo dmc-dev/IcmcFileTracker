@@ -6,7 +6,6 @@ import java.util.logging.Logger;
 
 
 import com.IcmcFileTracker.Components.TracerTable;
-import com.IcmcFileTracker.helpers.InOutObj;
 import com.IcmcFileTracker.model.Department;
 import com.IcmcFileTracker.model.Tracer;
 import com.IcmcFileTracker.model.TracerHead;
@@ -196,8 +195,8 @@ public class CreateTrackerView extends CustomComponent implements View{
 		horizontalLayout_1.addComponent(fileID);
 		
 		// inOutGroup
-		inOutGroup = new Label();
-		inOutGroup.setCaption("Check IN TO");
+		inOutGroup = new Label("Check IN TO");
+		//inOutGroup.setCaption("Check IN TO");
 		inOutGroup.setWidth("80px");
 		inOutGroup.setHeight("40px");
 		horizontalLayout_1.addComponent(inOutGroup);
