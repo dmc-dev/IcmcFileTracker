@@ -4,6 +4,7 @@ import com.IcmcFileTracker.IcmcFileTrackerUI;
 import com.IcmcFileTracker.Forms.LoginForm;
 import com.IcmcFileTracker.Views.CreateTrackerView;
 import com.IcmcFileTracker.Views.DepartmentView;
+import com.IcmcFileTracker.Views.ErrorView;
 import com.IcmcFileTracker.Views.FileHistoryView;
 import com.IcmcFileTracker.Views.HomeView;
 import com.IcmcFileTracker.Views.MyView;
@@ -52,6 +53,7 @@ public class NavBar extends CustomComponent{
 			}
 		};
 		
+		navigator.setErrorView(new ErrorView());
 		
 		MenuItem home = navBar.addItem(HomeView.VIEW_NAME, null, command);
 		navigator.addView(HomeView.VIEW_NAME, new HomeView());
